@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News &amp; Insights — Zooye Info Technologies</title>
+<meta name="description" content="Practical articles on web development, digital marketing and running a technology business from Zooye Info Technologies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="logo">
+      <img src="assets/images/logo.png" alt="Zooye Info Technologies" class="logo-img">
+    </a>
+    <nav class="navlinks">
+      <a href="index.html">Home</a>
+      <div class="nav-dropdown">
+        <a href="services.html">Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="dropdown-panel">
+          <a href="services.html">All Services</a>
+          <a href="portfolio.html">Our Portfolio</a>
+          <a href="process.html">Our Process</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a href="services.html#white-label">White Label <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="dropdown-panel">
+          <a href="services.html#white-label">White Label Services</a>
+          <a href="contact.html">Partner With Us</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a href="about.html">About <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="dropdown-panel">
+          <a href="about.html">About Us</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="faqs.html" class="active">FAQs</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary nav-pill">Get in Touch</a>
+    </div></div>
+</header>
+
+<section class="subhero">
+  <div class="wrap">
+    <span class="eyebrow">Digital Insights</span>
+    <h1>News &amp; <span class="grad-text">Insights</span></h1>
+    <p>Practical thinking on web development, digital marketing and running a technology business &mdash; written by the Zooye team.</p>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="featured-article">
+      <div class="cover"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 19.5A2.5 2.5 0 016.5 22H20V2H6.5A2.5 2.5 0 004 4.5v15z"/></svg></div>
+      <div class="body">
+        <div class="meta"><span>Web Development</span><span class="dot"></span><span style="color:var(--muted); text-transform:none; font-weight:600;">Featured</span></div>
+        <h2>Why Most Website Redesigns Fail to Improve Conversion</h2>
+        <p>A redesign that only changes the visuals usually leaves the actual problem untouched. Before touching a single pixel, we look at where visitors are dropping off, what they're actually trying to do on the site, and whether the new design removes friction from that path or just makes the old friction look nicer.</p>
+        <a href="#" class="btn btn-outline" style="align-self:flex-start;">Read Article</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="news-cats">
+      <button class="filter-btn active" data-cat="all">All</button>
+      <button class="filter-btn" data-cat="web-development">Web Development</button>
+      <button class="filter-btn" data-cat="digital-marketing">Digital Marketing</button>
+      <button class="filter-btn" data-cat="seo">SEO</button>
+      <button class="filter-btn" data-cat="design">Design</button>
+      <button class="filter-btn" data-cat="technology">Technology</button>
+      <button class="filter-btn" data-cat="business">Business</button>
+    </div>
+    <div class="article-grid" id="article-grid"></div>
+    <p style="text-align:center; font-size:12px; color:var(--muted); margin-top:24px;">Sample articles &mdash; replace with real published posts as they go live.</p>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap cta-inner">
+    <span class="eyebrow">Have A Project In Mind?</span>
+    <h2>Ready To Take Your Digital Presence To The Next Level?</h2>
+    <p>Tell us about your goals and let's create a digital solution designed around your business.</p>
+    <div class="hero-ctas" style="justify-content:center;">
+      <a href="contact.html" class="btn btn-primary" style="background:linear-gradient(90deg,var(--teal),var(--turquoise));">Get A Free Quote
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="mailto:contact@zooyeinfo.com" class="btn btn-outline">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<script>
+const articles = [
+  { cat:"web-development", catLabel:"Web Development", date:"Sample Post", title:"WordPress vs. Custom Development: How We Decide", excerpt:"Neither is the 'right' answer by default \u2014 the brief decides. Here's the actual checklist we run through with clients." },
+  { cat:"digital-marketing", catLabel:"Digital Marketing", date:"Sample Post", title:"Why Local SEO Matters More Than You Think For Small Businesses", excerpt:"Ranking nationally sounds impressive but rarely pays the bills. Here's why the map pack is where most local businesses actually win." },
+  { cat:"seo", catLabel:"SEO", date:"Sample Post", title:"Technical SEO Checklist Before You Launch A New Site", excerpt:"The most common launch mistakes we see \u2014 and the five checks that catch them before they cost you rankings." },
+  { cat:"design", catLabel:"Design", date:"Sample Post", title:"What Makes A Landing Page Actually Convert", excerpt:"It's rarely the color of the button. A look at the structural decisions that move the needle on conversion rate." },
+  { cat:"technology", catLabel:"Technology", date:"Sample Post", title:"Choosing Between Shopify And WooCommerce For Your Store", excerpt:"Both are solid platforms \u2014 the right one depends on your catalog size, your team, and how much control you actually need." },
+  { cat:"business", catLabel:"Business", date:"Sample Post", title:"When It Makes Sense To Bring Development In-House vs. Outsource", excerpt:"A practical framework for agencies and businesses deciding whether to hire, partner, or keep outsourcing project by project." },
+];
+
+document.getElementById('article-grid').innerHTML = articles.map(a => `
+  <div class="article-card" data-cat="${a.cat}">
+    <div class="cover"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19.5A2.5 2.5 0 016.5 17H20M4 19.5A2.5 2.5 0 016.5 22H20V2H6.5A2.5 2.5 0 004 4.5v15z"/></svg></div>
+    <div class="body">
+      <div class="meta"><span>${a.catLabel}</span><span class="dot"></span><span class="date">${a.date}</span></div>
+      <h3>${a.title}</h3>
+      <p>${a.excerpt}</p>
+      <a href="#" class="read-more">Read More
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>`).join('');
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.cat;
+    document.querySelectorAll('#article-grid .article-card').forEach(card => {
+      card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+    });
+  });
+});
+</script>
+<script src="js/site.js"></script>
+});
+
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="flogo"><img src="assets/images/logo.png" alt="Zooye Info Technologies" class="flogo-img"></div>
+        <p class="desc">Building modern digital experiences through design, technology and innovation.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="process.html">Our Process</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="#">News Room</a></li>
+          <li><a href="faqs.html">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Web Design &amp; Development</a></li>
+          <li><a href="services.html">SEO</a></li>
+          <li><a href="services.html">Content Marketing</a></li>
+          <li><a href="services.html">Social Media Marketing</a></li>
+          <li><a href="services.html">Graphic Designing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>135, E. Chettipalayam, Nambiyur,<br>Erode&nbsp;&ndash;&nbsp;638458, Tamil Nadu, IN</li>
+          <li><a href="mailto:contact@zooyeinfo.com">contact@zooyeinfo.com</a></li>
+          <li><a href="tel:+919361080448">+91 93610 80448</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbottom">
+      <span>&copy; 2026 Zooye Info Technologies. All Rights Reserved.</span>
+      <span><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
