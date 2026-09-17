@@ -3086,5 +3086,96 @@ footer p.desc {
 .mosaic-tile .fade{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(16,33,61,0) 40%, rgba(16,33,61,0.75) 100%); }
 
 .mosaic-tile .cap{ position:absolute; bottom:10px; left:12px; right:12px; color:#fff; font-family:'Manrope',sans-serif; font-weight:700; font-size:12.5px; }
+/* ---------- WHITE LABEL SHOWCASE (dark panel, inset rounded card) ---------- */
+  .wl-section{
+    position:relative; overflow:hidden; border-radius:28px; background:var(--navy);
+    padding:60px; max-width:1280px; margin:0 auto;
+  }
+
+.wl-section::before{
+    content:""; position:absolute; inset:0;
+    background-image:
+      repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 70px),
+      repeating-linear-gradient(-45deg, rgba(255,255,255,0.05) 0 1px, transparent 1px 70px);
+  }
+
+.wl-section::after{
+    content:""; position:absolute; inset:0;
+    background:radial-gradient(circle at 85% 15%, rgba(245,197,66,0.14), transparent 55%), radial-gradient(circle at 10% 85%, rgba(0,143,140,0.22), transparent 50%);
+  }
+
+.wl-head{ position:relative; max-width:640px; margin-bottom:48px; }
+
+.wl-head span.eyebrow{ background:rgba(255,255,255,0.1); color:#EAF6F5; }
+
+.wl-head span.eyebrow::before{ background:var(--gold); }
+
+.wl-head h2{ color:#fff; font-size:clamp(24px,3.2vw,32px); font-weight:800; line-height:1.3; margin:16px 0 14px; }
+
+.wl-head h2 .accent{ color:var(--turquoise); }
+
+.wl-head p{ color:#B9C6D8; font-size:14.5px; line-height:1.7; margin:0; }
+
+.wl-layout{ position:relative; display:grid; grid-template-columns:1.1fr 1fr; gap:48px; align-items:start; }
+
+@media (max-width:900px){ .wl-layout{ grid-template-columns:1fr; } .wl-section{ padding:44px 26px; border-radius:22px; } }
+
+.wl-lead{ color:#D3D8D8; font-size:14.5px; line-height:1.7; margin:0 0 30px; }
+
+.wl-features{ display:flex; flex-direction:column; gap:24px; margin-bottom:32px; }
+
+.wl-feature{ display:flex; gap:14px; }
+
+.wl-feature-icon{ width:42px; height:42px; border-radius:12px; background:rgba(0,143,140,0.16); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+
+.wl-feature-icon svg{ width:20px; height:20px; color:var(--turquoise); }
+
+.wl-feature h3{ color:#fff; font-size:15.5px; font-weight:700; margin-bottom:6px; }
+
+.wl-feature p{ color:#B9C6D8; font-size:13.5px; line-height:1.6; margin:0; max-width:400px; }
+
+.wl-pills{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:30px; }
+
+.wl-pill{ background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.14); padding:8px 16px; border-radius:999px; font-size:12.5px; font-weight:600; color:#EAF6F5; }
+
+.wl-visual .wl-mock{
+    background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:18px; padding:24px;
+    box-shadow:0 30px 70px rgba(0,0,0,0.35); backdrop-filter:blur(6px);
+  }
+
+.wl-mock-title{ color:#fff; font-size:13.5px; font-weight:700; margin-bottom:16px; display:flex; align-items:center; justify-content:space-between; }
+
+.wl-mock-badge{ font-size:11px; font-weight:700; color:var(--turquoise); background:rgba(18,166,160,0.16); padding:4px 10px; border-radius:999px; }
+
+.wl-mock-row{ display:flex; align-items:center; gap:12px; background:rgba(0,0,0,0.2); border-radius:12px; padding:12px; margin-bottom:9px; }
+
+.wl-mock-thumb{ width:38px; height:28px; border-radius:6px; background:linear-gradient(135deg,var(--teal),var(--turquoise)); flex-shrink:0; }
+
+.wl-mock-thumb.alt{ background:linear-gradient(135deg,var(--coral),var(--orange)); }
+
+.wl-mock-lines{ flex:1; display:flex; flex-direction:column; gap:6px; }
+
+.wl-mock-text{ height:7px; border-radius:4px; background:rgba(255,255,255,0.14); }
+
+.wl-mock-text.w70{ width:70%; }
+
+.wl-mock-text.w40{ width:40%; }
+
+.wl-mock-text.w60{ width:60%; }
+
+.wl-mock-text.w35{ width:35%; }
+
+.wl-mock-text.w80{ width:80%; }
+
+.wl-mock-text.w30{ width:30%; }
+
+.wl-mock-text.w50{ width:50%; }
+
+.wl-mock-text.w45{ width:45%; }
+
+.wl-mock-status{ font-size:11px; font-weight:700; color:#C9CFCF; background:rgba(255,255,255,0.07); padding:5px 10px; border-radius:999px; white-space:nowrap; }
+
+.wl-mock-status.done{ color:var(--turquoise); background:rgba(18,166,160,0.16); }
+
 
 
