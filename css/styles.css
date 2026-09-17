@@ -2889,3 +2889,100 @@ footer p.desc {
 .testimonial-card .who b{ display:block; font-size:13.5px; color:var(--navy); }
 
 .testimonial-card .who span{ font-size:12px; color:var(--muted); }
+
+.logo-carousel {
+  width: 100%;
+  overflow: hidden;
+  padding: 25px 0;
+}
+
+.logo-carousel-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: 70px;
+  animation: logoScroll 30s linear infinite;
+}
+
+.logo-item {
+  width: 150px;
+  height: 60px;
+  flex: 0 0 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-item img {
+  max-width: 130px;
+  max-height: 50px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.65;
+  transition: all 0.3s ease;
+}
+
+.logo-item img:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+@keyframes logoScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-carousel-track {
+    gap: 40px;
+    animation-duration: 25s;
+  }
+
+  .logo-item {
+    width: 120px;
+    flex-basis: 120px;
+  }
+
+  .logo-item img {
+    max-width: 105px;
+  }
+}
+
+.mosaic-tile {
+  position: relative;
+  overflow: hidden;
+}
+
+.mosaic-tile .bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mosaic-tile .fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.05) 70%
+  );
+  z-index: 1;
+}
+
+.mosaic-tile .cap {
+  position: absolute;
+  left: 20px;
+  bottom: 18px;
+  z-index: 2;
+}
