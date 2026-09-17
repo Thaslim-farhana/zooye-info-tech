@@ -586,87 +586,36 @@
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </div>
+/* ---------------- WORK MOSAIC (real photo when available, gradient fallback) ---------------- */
+// Add a real project screenshot to assets/images/ with these filenames to
+// replace a gradient tile. If the file is missing, that tile keeps its
+// gradient + tag automatically — never an empty or broken image.
+const mosaicItems = [
+  { tag:"Real Estate", image:"assets/images/real-estate.jpg", grad:"linear-gradient(160deg,#0F2A44,#1C4A5C)" },
+  { tag:"Education", image:"assets/images/education.jpg", grad:"linear-gradient(160deg,#0B2540,#3A6E7A)" },
+  { tag:"Travel", image:"assets/images/travel.jpg", grad:"linear-gradient(160deg,#0E2038,#1F5C6B)" },
+  { tag:"E-Commerce", image:"assets/images/ecommerce.jpg", grad:"linear-gradient(160deg,#0A0F1C,#25324A)" },
+  { tag:"Healthcare", image:"assets/images/healthcare.jpg", grad:"linear-gradient(160deg,#122A3D,#1D5A52)" },
+  { tag:"Food & Beverage", image:"assets/images/food.jpg", grad:"linear-gradient(160deg,#241417,#5C2A2A)" },
+  { tag:"SaaS", image:"assets/images/saas.jpg", grad:"linear-gradient(160deg,#0D1B2E,#2E4C6B)" },
+  { tag:"E-Commerce", image:"assets/images/ecommerce-2.jpg", grad:"linear-gradient(160deg,#1B1420,#4A2E4E)" },
+];
+function tileHTML(m){
+  return `<div class="mosaic-tile"><img class="bg" src="${m.image}" alt="${m.tag} website project" loading="lazy" onerror="this.outerHTML='<div class=&quot;bg&quot; style=&quot;background:${m.grad}&quot;></div>'"><div class="fade"></div><span class="cap">${m.tag}</span></div>`;
+}
+// Each row gets a different slice of items, duplicated twice so the
+// translateX(-50%) loop point lines up seamlessly with no visible seam.
+const rows = [
+  { id:'mosaic-row-1', items:[mosaicItems[0], mosaicItems[1], mosaicItems[2], mosaicItems[3]] },
+  { id:'mosaic-row-2', items:[mosaicItems[4], mosaicItems[5], mosaicItems[6], mosaicItems[7]] },
+  { id:'mosaic-row-3', items:[mosaicItems[2], mosaicItems[7], mosaicItems[0], mosaicItems[5]] },
+];
+rows.forEach(row => {
+  const doubled = row.items.concat(row.items);
+  document.getElementById(row.id).innerHTML = doubled.map(tileHTML).join('');
+});
 
-      <div class="portfolio-grid">
-        <!-- Featured Project (Larger Span) -->
-        <div class="project-card featured-card">
-          <div class="project-preview">
-            <div class="project-bg-visual" style="background:linear-gradient(135deg, #0B1930 0%, #008F8C 60%, #12A6A0 100%);"></div>
-            <span class="project-tag">Real Estate Architecture</span>
-          </div>
-          <div class="project-details">
-            <div>
-              <span class="project-meta">Web Platform &middot; High Conversion</span>
-              <h3>Property Listing &amp; Management Portal</h3>
-              <p>Full-featured dynamic real estate portal featuring custom search filtering, responsive property cards, interactive inquiry routing, and rapid database indexing.</p>
-            </div>
-            <a href="portfolio.html" class="project-cta-link">
-              Inspect Case Overview
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project-card">
-          <div class="project-preview">
-            <div class="project-bg-visual" style="background:linear-gradient(135deg, #07101E 0%, #162B4E 70%, #F5C542 100%);"></div>
-            <span class="project-tag">Education Tech</span>
-          </div>
-          <div class="project-details">
-            <div>
-              <span class="project-meta">LMS &amp; Portal</span>
-              <h3>Online Learning Platform</h3>
-              <p>Structured course delivery platform with student account dashboards, video hosting integrations, and automated payment gateway reconciliations.</p>
-            </div>
-            <a href="portfolio.html" class="project-cta-link">
-              Inspect Case Overview
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project-card">
-          <div class="project-preview">
-            <div class="project-bg-visual" style="background:linear-gradient(135deg, #0D1B33 0%, #1F5C6B 60%, #28B8B0 100%);"></div>
-            <span class="project-tag">Travel &amp; Hospitality</span>
-          </div>
-          <div class="project-details">
-            <div>
-              <span class="project-meta">Booking Engine</span>
-              <h3>Destination Booking Website</h3>
-              <p>Mobile-first booking interface featuring itinerary builders, date-range availability checks, and integrated WhatsApp customer inquiry automations.</p>
-            </div>
-            <a href="portfolio.html" class="project-cta-link">
-              Inspect Case Overview
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="project-card">
-          <div class="project-preview">
-            <div class="project-bg-visual" style="background:linear-gradient(135deg, #0A0F1C 0%, #25324A 70%, #EF6B55 100%);"></div>
-            <span class="project-tag">E-Commerce</span>
-          </div>
-          <div class="project-details">
-            <div>
-              <span class="project-meta">WooCommerce &amp; Shopify</span>
-              <h3>Product Showcase Store</h3>
-              <p>High-converting direct-to-consumer store with optimized one-click checkout flows, inventory synchronization, and fast product filtering.</p>
-            </div>
-            <a href="portfolio.html" class="project-cta-link">
-              Inspect Case Overview
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
+      
   <!-- 8. PROCESS SECTION (01-07 TIMELINE) -->
   <section class="process-section" id="process">
     <div class="wrap">
