@@ -2986,3 +2986,10 @@ footer p.desc {
   bottom: 18px;
   z-index: 2;
 }
+/* ---------- TESTIMONIAL HORIZONTAL SCROLL ---------- */
+.testimonial-scroll{ display:flex; gap:20px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:10px; -webkit-overflow-scrolling:touch; }
+
+.testimonial-scroll .testimonial-card{ min-width:300px; scroll-snap-align:start; flex:0 0 auto; }
+
+@media (min-width:760px){ .testimonial-scroll .testimonial-card{ min-width:0; flex:1 1 0; } }
+
