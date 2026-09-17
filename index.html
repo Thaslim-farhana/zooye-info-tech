@@ -586,34 +586,6 @@
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
       </div>
-/* ---------------- WORK MOSAIC (real photo when available, gradient fallback) ---------------- */
-// Add a real project screenshot to assets/images/ with these filenames to
-// replace a gradient tile. If the file is missing, that tile keeps its
-// gradient + tag automatically — never an empty or broken image.
-const mosaicItems = [
-  { tag:"Real Estate", image:"assets/images/real-estate.jpg", grad:"linear-gradient(160deg,#0F2A44,#1C4A5C)" },
-  { tag:"Education", image:"assets/images/education.jpg", grad:"linear-gradient(160deg,#0B2540,#3A6E7A)" },
-  { tag:"Travel", image:"assets/images/travel.jpg", grad:"linear-gradient(160deg,#0E2038,#1F5C6B)" },
-  { tag:"E-Commerce", image:"assets/images/ecommerce.jpg", grad:"linear-gradient(160deg,#0A0F1C,#25324A)" },
-  { tag:"Healthcare", image:"assets/images/healthcare.jpg", grad:"linear-gradient(160deg,#122A3D,#1D5A52)" },
-  { tag:"Food & Beverage", image:"assets/images/food.jpg", grad:"linear-gradient(160deg,#241417,#5C2A2A)" },
-  { tag:"SaaS", image:"assets/images/saas.jpg", grad:"linear-gradient(160deg,#0D1B2E,#2E4C6B)" },
-  { tag:"E-Commerce", image:"assets/images/ecommerce-2.jpg", grad:"linear-gradient(160deg,#1B1420,#4A2E4E)" },
-];
-function tileHTML(m){
-  return `<div class="mosaic-tile"><img class="bg" src="${m.image}" alt="${m.tag} website project" loading="lazy" onerror="this.outerHTML='<div class=&quot;bg&quot; style=&quot;background:${m.grad}&quot;></div>'"><div class="fade"></div><span class="cap">${m.tag}</span></div>`;
-}
-// Each row gets a different slice of items, duplicated twice so the
-// translateX(-50%) loop point lines up seamlessly with no visible seam.
-const rows = [
-  { id:'mosaic-row-1', items:[mosaicItems[0], mosaicItems[1], mosaicItems[2], mosaicItems[3]] },
-  { id:'mosaic-row-2', items:[mosaicItems[4], mosaicItems[5], mosaicItems[6], mosaicItems[7]] },
-  { id:'mosaic-row-3', items:[mosaicItems[2], mosaicItems[7], mosaicItems[0], mosaicItems[5]] },
-];
-rows.forEach(row => {
-  const doubled = row.items.concat(row.items);
-  document.getElementById(row.id).innerHTML = doubled.map(tileHTML).join('');
-});
 
       
   <!-- 8. PROCESS SECTION (01-07 TIMELINE) -->
@@ -677,55 +649,24 @@ rows.forEach(row => {
   </section>
 
   <!-- 9. CLIENT STANDARDS & EXCELLENCE (Clean Quality Commitment) -->
-  <section class="quality-section">
-    <div class="wrap">
-      <div class="sec-head">
-        <div>
-          <span class="eyebrow">Client Quality Commitment</span>
-          <h2>Engineered For <span class="accent">Real Client Satisfaction</span></h2>
-          <p class="sub">How our technical standards translate directly into measurable business value for our partners.</p>
-        </div>
-      </div>
 
-      <div class="quality-grid">
-        <div class="quality-card">
-          <div class="quality-stars">★★★★★</div>
-          <p class="quote">"Clear communication from sprint kickoff to final deployment. The direct developer access saved our team weeks of unnecessary back-and-forth, and the site launched ahead of schedule."</p>
-          <div class="client-author">
-            <div class="client-avatar">CT</div>
-            <div>
-              <b>Direct Client Partnership</b>
-              <span>Commercial Web Platform</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="quality-card">
-          <div class="quality-stars">★★★★★</div>
-          <p class="quote">"Zooye has been an indispensable white-label development partner for our marketing agency. Their code is clean, responsive, and consistently delivered under strict client NDAs."</p>
-          <div class="client-author">
-            <div class="client-avatar">AP</div>
-            <div>
-              <b>Agency Partner Collaboration</b>
-              <span>White-Label Development</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="quality-card">
-          <div class="quality-stars">★★★★★</div>
-          <p class="quote">"The automated CRM synchronization and WhatsApp API integrations completely overhauled our lead routing. Manual data entry errors dropped to zero within the first week."</p>
-          <div class="client-author">
-            <div class="client-avatar">MS</div>
-            <div>
-              <b>Enterprise Integration</b>
-              <span>CRM &amp; Workflow Automation</span>
-            </div>
-          </div>
-        </div>
+  <section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Client Feedback</span>
+        <h2>Here's What Our <span class="accent">Clients Say</span></h2>
       </div>
     </div>
-  </section>
+  </div>
+  <div class="testimonial-wrap">
+    <div class="testimonial-row dir-left" id="testimonial-row-1"></div>
+    <div class="testimonial-row dir-right" id="testimonial-row-2"></div>
+  </div>
+  <div class="wrap">
+    <p style="text-align:center; font-size:12px; color:var(--muted); margin-top:6px;">
+</section>
+
 
   <!-- 10. FAQ SECTION -->
   <section class="faq-section" id="faqs">
