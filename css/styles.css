@@ -2856,3 +2856,36 @@ footer p.desc {
 .cta .eyebrow::before{ background:var(--gold); }
 
 .cta p{ color:#B9C6D8; font-size:16px; margin-bottom:30px; }
+/* ---------- TESTIMONIALS (PLACEHOLDER, two-row continuous scroll) ---------- */
+.testimonial-wrap{ overflow:hidden; mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); -webkit-mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+
+.testimonial-row{ display:flex; gap:20px; width:max-content; margin-bottom:20px; }
+
+.testimonial-row.dir-left{ animation:mosaic-left 46s linear infinite; }
+
+.testimonial-row.dir-right{ animation:mosaic-right 46s linear infinite; }
+
+@media (prefers-reduced-motion: reduce){ .testimonial-row{ animation:none !important; } }
+
+.testimonial-card{
+  background:#fff; border:1px solid var(--line); border-radius:16px; padding:26px;
+  position:relative; width:360px; flex-shrink:0;
+}
+
+.testimonial-card .ph-tag{
+  position:absolute; top:14px; right:14px; font-size:10px; font-weight:700; letter-spacing:0.05em;
+  color:var(--muted); background:var(--bg-soft); padding:4px 9px; border-radius:999px;
+}
+
+.testimonial-card p.quote{ font-size:14.5px; color:#2b2f31; line-height:1.7; margin-bottom:22px; }
+
+.testimonial-card .who{ display:flex; align-items:center; gap:12px; }
+
+.testimonial-card .avatar{
+  width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,var(--teal),var(--turquoise));
+  display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:13px; flex-shrink:0;
+}
+
+.testimonial-card .who b{ display:block; font-size:13.5px; color:var(--navy); }
+
+.testimonial-card .who span{ font-size:12px; color:var(--muted); }
