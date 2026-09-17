@@ -183,6 +183,32 @@ rows.forEach(row => {
   document.getElementById(row.id).innerHTML = doubled.map(tileHTML).join('');
 });
 
+  /* ---------------- TESTIMONIALS (PLACEHOLDER, two-row scroll) ---------------- */
+const testimonials = [
+  { quote:"This is where a real client testimonial will go. Replace this with actual feedback once you have it &mdash; a specific result or detail lands better than a generic compliment.", name:"Sakthi", role:"Role, Company", initials:"CN" },
+  { quote:"Another spot for a genuine quote from someone you've worked with. Ask happy clients for a line or two after a project wraps up &mdash; it's the best time to catch it.", name:"Shiva", role:"Role, Company", initials:"CN" },
+  { quote:"A third testimonial slot. Real names, real companies, real quotes &mdash; swap this out before the site goes live.", name:"Subramaniam", role:"Role, Company", initials:"CN" },
+  { quote:"A fourth placeholder, written the way a real one might read &mdash; specific about what changed, not just that you were happy with the outcome.", name:"Salman", role:"Role, Company", initials:"CN" },
+  { quote:"A fifth slot for feedback from an agency partner, once you have white label work you can showcase publicly.", name:"Pradeep", role:"Role, Company", initials:"CN" },
+  { quote:"A sixth and final placeholder &mdash; six is usually enough to fill two rows without repeating the same quote too often as it loops.", name:"Meena", role:"Role, Company", initials:"CN" },
+];
+function testimonialHTML(t){
+  return `<div class="testimonial-card"><span class="ph-tag">PLACEHOLDER</span><p class="quote">"${t.quote}"</p><div class="who"><div class="avatar">${t.initials}</div><div><b>${t.name}</b><span>${t.role}</span></div></div></div>`;
+}
+const tRows = [
+  { id:'testimonial-row-1', items:[testimonials[0], testimonials[1], testimonials[2]] },
+  { id:'testimonial-row-2', items:[testimonials[3], testimonials[4], testimonials[5]] },
+];
+tRows.forEach(row => {
+  const doubled = row.items.concat(row.items);
+  document.getElementById(row.id).innerHTML = doubled.map(testimonialHTML).join('');
+});
+/* ---------------- LOGO CAROUSEL (PLACEHOLDER) ---------------- */
+const logoCarouselSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>';
+const logoCarouselLabels = ["Client Logo","Client Logo","Client Logo","Client Logo","Client Logo","Client Logo"];
+const logoCarouselTrack = document.getElementById('logo-carousel-track');
+logoCarouselTrack.innerHTML = (logoCarouselLabels.concat(logoCarouselLabels)).map(l => `<span class="logo-carousel-item">${logoCarouselSvg}${l}</span>`).join('');
+
 
   // Scroll reveals
   function initScrollReveals() {
@@ -279,32 +305,8 @@ rows.forEach(row => {
       counterObserver.observe(el);
     });
   }
-  /* ---------------- TESTIMONIALS (PLACEHOLDER, two-row scroll) ---------------- */
-const testimonials = [
-  { quote:"This is where a real client testimonial will go. Replace this with actual feedback once you have it &mdash; a specific result or detail lands better than a generic compliment.", name:"Sakthi", role:"Role, Company", initials:"CN" },
-  { quote:"Another spot for a genuine quote from someone you've worked with. Ask happy clients for a line or two after a project wraps up &mdash; it's the best time to catch it.", name:"Shiva", role:"Role, Company", initials:"CN" },
-  { quote:"A third testimonial slot. Real names, real companies, real quotes &mdash; swap this out before the site goes live.", name:"Subramaniam", role:"Role, Company", initials:"CN" },
-  { quote:"A fourth placeholder, written the way a real one might read &mdash; specific about what changed, not just that you were happy with the outcome.", name:"Salman", role:"Role, Company", initials:"CN" },
-  { quote:"A fifth slot for feedback from an agency partner, once you have white label work you can showcase publicly.", name:"Pradeep", role:"Role, Company", initials:"CN" },
-  { quote:"A sixth and final placeholder &mdash; six is usually enough to fill two rows without repeating the same quote too often as it loops.", name:"Meena", role:"Role, Company", initials:"CN" },
-];
-function testimonialHTML(t){
-  return `<div class="testimonial-card"><span class="ph-tag">PLACEHOLDER</span><p class="quote">"${t.quote}"</p><div class="who"><div class="avatar">${t.initials}</div><div><b>${t.name}</b><span>${t.role}</span></div></div></div>`;
-}
-const tRows = [
-  { id:'testimonial-row-1', items:[testimonials[0], testimonials[1], testimonials[2]] },
-  { id:'testimonial-row-2', items:[testimonials[3], testimonials[4], testimonials[5]] },
-];
-tRows.forEach(row => {
-  const doubled = row.items.concat(row.items);
-  document.getElementById(row.id).innerHTML = doubled.map(testimonialHTML).join('');
-});
 
-/* ---------------- LOGO CAROUSEL (PLACEHOLDER) ---------------- */
-const logoCarouselSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>';
-const logoCarouselLabels = ["Client Logo","Client Logo","Client Logo","Client Logo","Client Logo","Client Logo"];
-const logoCarouselTrack = document.getElementById('logo-carousel-track');
-logoCarouselTrack.innerHTML = (logoCarouselLabels.concat(logoCarouselLabels)).map(l => `<span class="logo-carousel-item">${logoCarouselSvg}${l}</span>`).join('');
+
 
 
   if (document.readyState === 'loading') {
