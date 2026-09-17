@@ -2986,10 +2986,105 @@ footer p.desc {
   bottom: 18px;
   z-index: 2;
 }
+/* ---------- TESTIMONIALS (PLACEHOLDER) ---------- */
+.testimonial-card{
+  background:#fff; border:1.5px dashed var(--line); border-radius:16px; padding:26px;
+  position:relative;
+}
+
+.testimonial-card .stars{ color:var(--gold); font-size:14px; letter-spacing:2px; margin-bottom:14px; }
+
+.testimonial-card p.quote{ font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:22px; font-style:italic; }
+
 /* ---------- TESTIMONIAL HORIZONTAL SCROLL ---------- */
 .testimonial-scroll{ display:flex; gap:20px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:10px; -webkit-overflow-scrolling:touch; }
 
 .testimonial-scroll .testimonial-card{ min-width:300px; scroll-snap-align:start; flex:0 0 auto; }
 
 @media (min-width:760px){ .testimonial-scroll .testimonial-card{ min-width:0; flex:1 1 0; } }
+/* ---------- LOGO CAROUSEL (PLACEHOLDER) ---------- */
+.logo-carousel{ overflow:hidden; padding:44px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+
+.logo-carousel-track{ display:flex; align-items:center; gap:56px; width:max-content; animation:logo-scroll 26s linear infinite; }
+
+.logo-carousel-item{ display:flex; align-items:center; gap:9px; font-family:'Manrope',sans-serif; font-weight:700; font-size:15px; color:var(--muted); opacity:0.55; white-space:nowrap; flex-shrink:0; }
+
+.logo-carousel-item svg{ width:22px; height:22px; opacity:0.7; flex-shrink:0; }
+
+@keyframes logo-scroll{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
+@media (prefers-reduced-motion: reduce){ .logo-carousel-track{ animation:none; } }
+/* ---------- TESTIMONIALS (PLACEHOLDER, two-row continuous scroll) ---------- */
+.testimonial-wrap{ overflow:hidden; mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); -webkit-mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+
+.testimonial-row{ display:flex; gap:20px; width:max-content; margin-bottom:20px; }
+
+.testimonial-row.dir-left{ animation:mosaic-left 46s linear infinite; }
+
+.testimonial-row.dir-right{ animation:mosaic-right 46s linear infinite; }
+
+@media (prefers-reduced-motion: reduce){ .testimonial-row{ animation:none !important; } }
+
+.testimonial-card{
+  background:#fff; border:1px solid var(--line); border-radius:16px; padding:26px;
+  position:relative; width:360px; flex-shrink:0;
+}
+
+.testimonial-card .ph-tag{
+  position:absolute; top:14px; right:14px; font-size:10px; font-weight:700; letter-spacing:0.05em;
+  color:var(--muted); background:var(--bg-soft); padding:4px 9px; border-radius:999px;
+}
+
+.testimonial-card p.quote{ font-size:14.5px; color:#2b2f31; line-height:1.7; margin-bottom:22px; }
+
+.testimonial-card .who{ display:flex; align-items:center; gap:12px; }
+
+.testimonial-card .avatar{
+  width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,var(--teal),var(--turquoise));
+  display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:13px; flex-shrink:0;
+}
+
+.testimonial-card .who b{ display:block; font-size:13.5px; color:var(--navy); }
+
+.testimonial-card .who span{ font-size:12px; color:var(--muted); }
+
+/* ---------- WORK MOSAIC (tilted, grayscale, continuously scrolling) ---------- */
+.logos-label{ text-align:center; font-size:12.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
+
+.mosaic-wrap{
+  overflow:hidden; padding:60px 0 40px;
+  transform:rotate(-4deg) scale(1.12); margin:0 -40px;
+}
+
+@media (max-width:600px){ .mosaic-wrap{ transform:rotate(-3deg) scale(1.06); } }
+
+.mosaic-row{ display:flex; gap:20px; width:max-content; margin-bottom:20px; }
+
+.mosaic-row.dir-left{ animation:mosaic-left 32s linear infinite; }
+
+.mosaic-row.dir-right{ animation:mosaic-right 32s linear infinite; }
+
+.mosaic-row.speed-slow{ animation-duration:44s; }
+
+.mosaic-row.speed-fast{ animation-duration:24s; }
+
+@keyframes mosaic-left{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
+@keyframes mosaic-right{ from{ transform:translateX(-50%); } to{ transform:translateX(0); } }
+
+@media (prefers-reduced-motion: reduce){ .mosaic-row{ animation:none !important; } }
+
+.mosaic-tile{
+  width:260px; aspect-ratio:4/3; flex-shrink:0; border-radius:10px; overflow:hidden; position:relative;
+  filter:grayscale(1) contrast(1.05); transition:filter .3s ease, transform .3s ease; box-shadow:0 14px 30px rgba(16,33,61,0.12);
+}
+
+.mosaic-tile:hover{ filter:grayscale(0); transform:translateY(-4px) scale(1.02); }
+
+.mosaic-tile .bg{ position:absolute; inset:0; }
+
+.mosaic-tile .fade{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(16,33,61,0) 40%, rgba(16,33,61,0.75) 100%); }
+
+.mosaic-tile .cap{ position:absolute; bottom:10px; left:12px; right:12px; color:#fff; font-family:'Manrope',sans-serif; font-weight:700; font-size:12.5px; }
+
 
