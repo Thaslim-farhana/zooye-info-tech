@@ -204,45 +204,6 @@ button, input, select, textarea {
 .cta-card-badge .check svg{ width:12px; height:12px; color:#fff; }
 
 @media (max-width:640px){ .cta-card{ padding:40px 26px; } .cta-card-top{ flex-direction:column; align-items:flex-start; } }
-/* ---------- WORK MOSAIC (tilted, grayscale, continuously scrolling) ---------- */
-.logos-label{ text-align:center; font-size:12.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
-
-.mosaic-wrap{
-  overflow:hidden; padding:60px 0 40px;
-  transform:rotate(-4deg) scale(1.12); margin:0 -40px;
-}
-
-@media (max-width:600px){ .mosaic-wrap{ transform:rotate(-3deg) scale(1.06); } }
-
-.mosaic-row{ display:flex; gap:20px; width:max-content; margin-bottom:20px; }
-
-.mosaic-row.dir-left{ animation:mosaic-left 32s linear infinite; }
-
-.mosaic-row.dir-right{ animation:mosaic-right 32s linear infinite; }
-
-.mosaic-row.speed-slow{ animation-duration:44s; }
-
-.mosaic-row.speed-fast{ animation-duration:24s; }
-
-@keyframes mosaic-left{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
-
-@keyframes mosaic-right{ from{ transform:translateX(-50%); } to{ transform:translateX(0); } }
-
-@media (prefers-reduced-motion: reduce){ .mosaic-row{ animation:none !important; } }
-
-.mosaic-tile{
-  width:260px; aspect-ratio:4/3; flex-shrink:0; border-radius:10px; overflow:hidden; position:relative;
-  filter:grayscale(1) contrast(1.05); transition:filter .3s ease, transform .3s ease; box-shadow:0 14px 30px rgba(16,33,61,0.12);
-}
-
-.mosaic-tile:hover{ filter:grayscale(0); transform:translateY(-4px) scale(1.02); }
-
-.mosaic-tile .bg{ position:absolute; inset:0; }
-
-.mosaic-tile .fade{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(16,33,61,0) 40%, rgba(16,33,61,0.75) 100%); }
-
-.mosaic-tile .cap{ position:absolute; bottom:10px; left:12px; right:12px; color:#fff; font-family:'Manrope',sans-serif; font-weight:700; font-size:12.5px; }
-
 
 /* Buttons */
 .btn {
@@ -330,6 +291,45 @@ button, input, select, textarea {
   padding: 10px 20px !important;
   font-size: 13.5px !important;
 }
+/* ---------- WORK MOSAIC (tilted, grayscale, continuously scrolling) ---------- */
+.logos-label{ text-align:center; font-size:12.5px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
+
+.mosaic-wrap{
+  overflow:hidden; padding:60px 0 40px;
+  transform:rotate(-4deg) scale(1.12); margin:0 -40px;
+}
+
+@media (max-width:600px){ .mosaic-wrap{ transform:rotate(-3deg) scale(1.06); } }
+
+.mosaic-row{ display:flex; gap:20px; width:max-content; margin-bottom:20px; }
+
+.mosaic-row.dir-left{ animation:mosaic-left 32s linear infinite; }
+
+.mosaic-row.dir-right{ animation:mosaic-right 32s linear infinite; }
+
+.mosaic-row.speed-slow{ animation-duration:44s; }
+
+.mosaic-row.speed-fast{ animation-duration:24s; }
+
+@keyframes mosaic-left{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
+@keyframes mosaic-right{ from{ transform:translateX(-50%); } to{ transform:translateX(0); } }
+
+@media (prefers-reduced-motion: reduce){ .mosaic-row{ animation:none !important; } }
+
+.mosaic-tile{
+  width:260px; aspect-ratio:4/3; flex-shrink:0; border-radius:10px; overflow:hidden; position:relative;
+  filter:grayscale(1) contrast(1.05); transition:filter .3s ease, transform .3s ease; box-shadow:0 14px 30px rgba(16,33,61,0.12);
+}
+
+.mosaic-tile:hover{ filter:grayscale(0); transform:translateY(-4px) scale(1.02); }
+
+.mosaic-tile .bg{ position:absolute; inset:0; }
+
+.mosaic-tile .fade{ position:absolute; inset:0; background:linear-gradient(180deg, rgba(16,33,61,0) 40%, rgba(16,33,61,0.75) 100%); }
+
+.mosaic-tile .cap{ position:absolute; bottom:10px; left:12px; right:12px; color:#fff; font-family:'Manrope',sans-serif; font-weight:700; font-size:12.5px; }
+
 
 /* ================= HEADER & NAVIGATION ================= */
 header {
