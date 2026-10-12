@@ -3196,28 +3196,27 @@ footer p.desc {
   opacity: 1 !important;
   filter: none !important;
 }
-/* Fix faded white text in the white-label section */
-.cross-grid-light,
-.cross-grid-light p,
-.cross-grid-light li,
-.cross-grid-light .feature-item,
-.cross-grid-light .feature-list {
-  opacity: 1;
+/* Background Cross Grid Lines */
+body {
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(45deg, rgba(0, 0, 0, 0.045) 1px, transparent 1px),
+    linear-gradient(-45deg, rgba(0, 0, 0, 0.045) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
-/* Feature text visibility */
-.cross-grid-light .feature-item,
-.cross-grid-light .feature-list li {
-  color: #526780;
-  opacity: 1;
+/* Light Cross Grid */
+.cross-grid-light {
+  background-image:
+    linear-gradient(45deg, rgba(0, 0, 0, 0.045) 1px, transparent 1px),
+    linear-gradient(-45deg, rgba(0, 0, 0, 0.045) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
 
-/* Feature icons */
-.cross-grid-light .feature-item svg,
-.cross-grid-light .feature-list svg {
-  color: #009e98;
-  opacity: 1;
+/* Dark Cross Grid */
+.cross-grid-dark {
+  background-image:
+    linear-gradient(45deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
-
-
-
