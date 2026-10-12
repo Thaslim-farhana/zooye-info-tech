@@ -3196,6 +3196,28 @@ footer p.desc {
   opacity: 1 !important;
   filter: none !important;
 }
+/* Fix faded white text in the white-label section */
+.cross-grid-light,
+.cross-grid-light p,
+.cross-grid-light li,
+.cross-grid-light .feature-item,
+.cross-grid-light .feature-list {
+  opacity: 1;
+}
+
+/* Feature text visibility */
+.cross-grid-light .feature-item,
+.cross-grid-light .feature-list li {
+  color: #526780;
+  opacity: 1;
+}
+
+/* Feature icons */
+.cross-grid-light .feature-item svg,
+.cross-grid-light .feature-list svg {
+  color: #009e98;
+  opacity: 1;
+}
 
 
 
