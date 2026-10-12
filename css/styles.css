@@ -3177,5 +3177,25 @@ footer p.desc {
 
 .wl-mock-status.done{ color:var(--turquoise); background:rgba(18,166,160,0.16); }
 
+/* FIX: White-label feature text visibility */
+.whitelabel-section .whitelabel-pills .wl-pill {
+  color: #0B1930 !important;
+  opacity: 1 !important;
+  -webkit-text-fill-color: #0B1930 !important;
+  filter: none !important;
+}
+
+.whitelabel-section .whitelabel-pills .wl-pill svg {
+  color: #009E98 !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+/* Ensure the section does not fade its content */
+.whitelabel-section .whitelabel-banner > div:first-child {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
 
 
