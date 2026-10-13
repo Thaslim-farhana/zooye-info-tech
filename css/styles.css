@@ -5155,35 +5155,52 @@ textarea {
 }
 
 
-/* ZOOYE — SUBTLE ZESTCODE-STYLE BACKGROUND */
+/* ============================================================
+   FINAL FIX — ONE SUBTLE GLOBAL GRID FOR LIGHT + DARK SECTIONS
+   This override removes the duplicate, dense grid from the
+   enquiry section and other light sections, letting one global
+   background show through instead.
+============================================================ */
+:root {
+  --zooye-final-grid-light: rgba(105, 112, 145, 0.035);
+  --zooye-final-grid-dark: rgba(190, 204, 230, 0.045);
+}
 
-/* Light sections */
+html,
 body {
-  background-color: #ffffff;
+  background-color: #ffffff !important;
+}
+
+body {
   background-image:
     repeating-linear-gradient(
       45deg,
       transparent 0,
       transparent 59px,
-      rgba(100, 100, 150, 0.035) 59.5px,
+      var(--zooye-final-grid-light) 59.5px,
       transparent 60px
     ),
     repeating-linear-gradient(
       -45deg,
       transparent 0,
       transparent 59px,
-      rgba(100, 100, 150, 0.035) 59.5px,
+      var(--zooye-final-grid-light) 59.5px,
       transparent 60px
-    );
-  background-size: 120px 120px;
+    ) !important;
+  background-size: 120px 120px !important;
+  background-position: 0 0 !important;
   background-attachment: fixed;
 }
 
-/* Let the body grid show through the hero and light sections */
+/* Light sections use the body grid; do not paint a second grid. */
 main,
-.hero,
-.hero-section,
-.home-hero,
+.site-main,
+.page-content,
+.page-wrapper,
+main > .wrap,
+main > .container,
+main > .content-wrap,
+section:not(.signature-dark-section):not(.final-cta):not(.cta):not(.infbar):not(.wl-section):not(.cta-card):not(.dark-section),
 .why-zooye-section,
 .services-section,
 .whitelabel-section,
@@ -5191,50 +5208,54 @@ main,
 .process-section,
 .quality-section,
 .faq-section,
-.trust-strip,
 .subhero,
+.trust-strip,
 .home-enquiry-section {
-  background-color: transparent;
-  background-image: none;
+  background-color: transparent !important;
+  background-image: none !important;
 }
 
-/* Dark sections — keep the same pattern very subtle */
+/* Keep the contact/enquiry card itself white and readable. */
+.home-enquiry-form-card,
+.contact-form-card,
+.contact-info-card,
+form,
+.project-enquiry-form,
+input,
+select,
+textarea {
+  background-color: #ffffff;
+}
+
+/* Dark sections retain their navy surface with a very faint grid. */
 .signature-dark-section,
 .final-cta,
 .cta,
 .infbar,
-.wl-section {
+.wl-section,
+.cta-card,
+.dark-section {
+  background-color: #081426 !important;
   background-image:
     repeating-linear-gradient(
       45deg,
       transparent 0,
       transparent 59px,
-      rgba(180, 200, 235, 0.045) 59.5px,
+      var(--zooye-final-grid-dark) 59.5px,
       transparent 60px
     ),
     repeating-linear-gradient(
       -45deg,
       transparent 0,
       transparent 59px,
-      rgba(180, 200, 235, 0.045) 59.5px,
+      var(--zooye-final-grid-dark) 59.5px,
       transparent 60px
-    );
-  background-size: 120px 120px;
+    ) !important;
+  background-size: 120px 120px !important;
+  background-position: 0 0 !important;
 }
 
-/* Keep cards and form fields readable */
-input,
-select,
-textarea,
-.service-card,
-.portfolio-card,
-.why-card {
-  background-color: #ffffff;
-}
-
-/* Mobile */
 @media (max-width: 768px) {
-  body {
-    background-attachment: scroll;
-  }
+  body { background-attachment: scroll; }
 }
+
