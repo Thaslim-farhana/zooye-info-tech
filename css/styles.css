@@ -5154,17 +5154,10 @@ textarea {
   body { background-attachment: scroll; }
 }
 
-/* =========================================
-   ZOOYE — REFINED ZESTCODE-INSPIRED GRID
-   Add at the very end of css/styles.css
-========================================= */
 
-:root {
-  --grid-light: rgba(112, 104, 170, 0.075);
-  --grid-dark: rgba(160, 181, 220, 0.075);
-}
+/* ZOOYE — SUBTLE ZESTCODE-STYLE BACKGROUND */
 
-/* LIGHT SECTIONS */
+/* Light sections */
 body {
   background-color: #ffffff;
   background-image:
@@ -5172,25 +5165,25 @@ body {
       45deg,
       transparent 0,
       transparent 59px,
-      var(--grid-light) 59.5px,
+      rgba(100, 100, 150, 0.035) 59.5px,
       transparent 60px
     ),
     repeating-linear-gradient(
       -45deg,
       transparent 0,
       transparent 59px,
-      var(--grid-light) 59.5px,
+      rgba(100, 100, 150, 0.035) 59.5px,
       transparent 60px
     );
   background-size: 120px 120px;
   background-attachment: fixed;
 }
 
-/* Allow the global grid to show through light sections */
+/* Let the body grid show through the hero and light sections */
 main,
-main section,
-.trust-strip,
-.subhero,
+.hero,
+.hero-section,
+.home-hero,
 .why-zooye-section,
 .services-section,
 .whitelabel-section,
@@ -5198,11 +5191,14 @@ main section,
 .process-section,
 .quality-section,
 .faq-section,
+.trust-strip,
+.subhero,
 .home-enquiry-section {
   background-color: transparent;
+  background-image: none;
 }
 
-/* DARK SECTIONS — subtle cool-toned grid */
+/* Dark sections — keep the same pattern very subtle */
 .signature-dark-section,
 .final-cta,
 .cta,
@@ -5213,21 +5209,20 @@ main section,
       45deg,
       transparent 0,
       transparent 59px,
-      var(--grid-dark) 59.5px,
+      rgba(180, 200, 235, 0.045) 59.5px,
       transparent 60px
     ),
     repeating-linear-gradient(
       -45deg,
       transparent 0,
       transparent 59px,
-      var(--grid-dark) 59.5px,
+      rgba(180, 200, 235, 0.045) 59.5px,
       transparent 60px
     );
   background-size: 120px 120px;
 }
 
 /* Keep cards and form fields readable */
-form,
 input,
 select,
 textarea,
@@ -5237,7 +5232,7 @@ textarea,
   background-color: #ffffff;
 }
 
-/* Mobile performance */
+/* Mobile */
 @media (max-width: 768px) {
   body {
     background-attachment: scroll;
