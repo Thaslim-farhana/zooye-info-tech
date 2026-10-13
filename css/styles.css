@@ -3198,67 +3198,64 @@ footer p.desc {
 }
 
 
-/* ==========================================
-   ZOOYE — PREMIUM DIAGONAL CROSS GRID
-   ========================================== */
-
+/* ZOOYE — Site-wide diagonal cross grid */
 :root {
-  --grid-spacing: 46px;
-  --grid-light-color: rgba(120, 155, 175, 0.13);
-  --grid-dark-color: rgba(190, 220, 235, 0.10);
+  --zooye-grid-size: 24px;
+  --zooye-grid-light: rgba(20, 45, 65, 0.055);
+  --zooye-grid-dark: rgba(255, 255, 255, 0.075);
 }
 
-/* Default light-theme grid */
+/* Light page background */
 body {
+  background-color: #fff;
   background-image:
     repeating-linear-gradient(
       45deg,
       transparent 0,
-      transparent calc(var(--grid-spacing) - 1px),
-      var(--grid-light-color) calc(var(--grid-spacing) - 1px),
-      var(--grid-light-color) var(--grid-spacing)
+      transparent 23px,
+      var(--zooye-grid-light) 23px,
+      var(--zooye-grid-light) 24px
     ),
     repeating-linear-gradient(
       -45deg,
       transparent 0,
-      transparent calc(var(--grid-spacing) - 1px),
-      var(--grid-light-color) calc(var(--grid-spacing) - 1px),
-      var(--grid-light-color) var(--grid-spacing)
+      transparent 23px,
+      var(--zooye-grid-light) 23px,
+      var(--zooye-grid-light) 24px
     );
-  background-size: var(--grid-spacing) var(--grid-spacing);
-  background-attachment: fixed;
+  background-size: 24px 24px;
 }
 
-/* Dark gradient panels, like your screenshot */
+/* Dark CTA and dark sections */
 .dark-section,
 .hero-dark,
-.final-cta,
-.final-cta-inner {
+.cta-section,
+.final-cta {
   background-image:
     repeating-linear-gradient(
       45deg,
       transparent 0,
-      transparent calc(var(--grid-spacing) - 1px),
-      var(--grid-dark-color) calc(var(--grid-spacing) - 1px),
-      var(--grid-dark-color) var(--grid-spacing)
+      transparent 23px,
+      var(--zooye-grid-dark) 23px,
+      var(--zooye-grid-dark) 24px
     ),
     repeating-linear-gradient(
       -45deg,
       transparent 0,
-      transparent calc(var(--grid-spacing) - 1px),
-      var(--grid-dark-color) calc(var(--grid-spacing) - 1px),
-      var(--grid-dark-color) var(--grid-spacing)
+      transparent 23px,
+      var(--zooye-grid-dark) 23px,
+      var(--zooye-grid-dark) 24px
     );
-  background-size: var(--grid-spacing) var(--grid-spacing);
 }
 
-/* Mobile */
+/* Responsive grid */
 @media (max-width: 768px) {
   :root {
-    --grid-spacing: 32px;
+    --zooye-grid-size: 24px;
   }
 
   body {
     background-attachment: scroll;
   }
 }
+
