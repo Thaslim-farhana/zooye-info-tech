@@ -3959,6 +3959,38 @@ form {
     padding: 28px 12px 38px;
   }
 
+  
+/* Remove white background behind the architecture pipeline */
+.zooye-architecture,
+.zooye-architecture .architecture-panel,
+.zooye-architecture .pipeline-visual,
+.zooye-architecture .pipeline-container {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none;
+}
+
+/* Keep the actual pipeline panel dark */
+.zooye-architecture .architecture-panel {
+  background: #1c2b40 !important;
+  border: 1px solid #344359;
+  border-radius: 25px;
+}
+
+/* Remove white backgrounds from common hero wrappers */
+.hero,
+.hero-content,
+.hero-visual,
+.hero-image,
+.hero-illustration {
+  background-color: transparent;
+}
+
+/* Prevent a white image frame around the pipeline */
+.zooye-architecture img {
+  background: transparent;
+}
+
   .zooye-architecture .architecture-panel {
     padding: 18px 12px;
     border-radius: 18px;
