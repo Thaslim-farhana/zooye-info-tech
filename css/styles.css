@@ -5153,3 +5153,93 @@ textarea {
 @media (max-width: 768px) {
   body { background-attachment: scroll; }
 }
+
+/* =========================================
+   ZOOYE — REFINED ZESTCODE-INSPIRED GRID
+   Add at the very end of css/styles.css
+========================================= */
+
+:root {
+  --grid-light: rgba(112, 104, 170, 0.075);
+  --grid-dark: rgba(160, 181, 220, 0.075);
+}
+
+/* LIGHT SECTIONS */
+body {
+  background-color: #ffffff;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0,
+      transparent 59px,
+      var(--grid-light) 59.5px,
+      transparent 60px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0,
+      transparent 59px,
+      var(--grid-light) 59.5px,
+      transparent 60px
+    );
+  background-size: 120px 120px;
+  background-attachment: fixed;
+}
+
+/* Allow the global grid to show through light sections */
+main,
+main section,
+.trust-strip,
+.subhero,
+.why-zooye-section,
+.services-section,
+.whitelabel-section,
+.portfolio-section,
+.process-section,
+.quality-section,
+.faq-section,
+.home-enquiry-section {
+  background-color: transparent;
+}
+
+/* DARK SECTIONS — subtle cool-toned grid */
+.signature-dark-section,
+.final-cta,
+.cta,
+.infbar,
+.wl-section {
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0,
+      transparent 59px,
+      var(--grid-dark) 59.5px,
+      transparent 60px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0,
+      transparent 59px,
+      var(--grid-dark) 59.5px,
+      transparent 60px
+    );
+  background-size: 120px 120px;
+}
+
+/* Keep cards and form fields readable */
+form,
+input,
+select,
+textarea,
+.service-card,
+.portfolio-card,
+.why-card {
+  background-color: #ffffff;
+}
+
+/* Mobile performance */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+}
