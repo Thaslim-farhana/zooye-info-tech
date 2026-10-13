@@ -3196,27 +3196,95 @@ footer p.desc {
   opacity: 1 !important;
   filter: none !important;
 }
-/* Background Cross Grid Lines */
+
+/* =========================================
+   ZOOYE GLOBAL 45-DEGREE CROSS GRID
+   Light and dark theme support
+   ========================================= */
+
+:root {
+  --grid-size: 24px;
+  --grid-light-line: rgba(16, 33, 61, 0.09);
+  --grid-dark-line: rgba(255, 255, 255, 0.09);
+}
+
+/* Light background grid */
 body {
-  background-color: #ffffff;
   background-image:
-    linear-gradient(45deg, rgba(0, 0, 0, 0.045) 1px, transparent 1px),
-    linear-gradient(-45deg, rgba(0, 0, 0, 0.045) 1px, transparent 1px);
-  background-size: 32px 32px;
+    repeating-linear-gradient(
+      45deg,
+      transparent 0,
+      transparent calc(var(--grid-size) - 1px),
+      var(--grid-light-line) calc(var(--grid-size) - 1px),
+      var(--grid-light-line) var(--grid-size)
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0,
+      transparent calc(var(--grid-size) - 1px),
+      var(--grid-light-line) calc(var(--grid-size) - 1px),
+      var(--grid-light-line) var(--grid-size)
+    );
+  background-size: var(--grid-size) var(--grid-size);
+  background-attachment: fixed;
 }
 
-/* Light Cross Grid */
-.cross-grid-light {
-  background-image:
-    linear-gradient(45deg, rgba(0, 0, 0, 0.045) 1px, transparent 1px),
-    linear-gradient(-45deg, rgba(0, 0, 0, 0.045) 1px, transparent 1px);
-  background-size: 32px 32px;
+/* Keep the page background visible through light sections */
+main,
+section,
+footer {
+  background-color: transparent;
 }
 
-/* Dark Cross Grid */
-.cross-grid-dark {
+/* Dark sections: use a lighter cross grid */
+.dark-section,
+.dark-section *,
+.hero-dark,
+.hero-dark *,
+footer.dark,
+footer.dark * {
+  --grid-current-line: var(--grid-dark-line);
+}
+
+/* Dark surfaces with their own background colors */
+.dark-section,
+.hero-dark,
+footer.dark {
   background-image:
-    linear-gradient(45deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(-45deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-  background-size: 32px 32px;
+    repeating-linear-gradient(
+      45deg,
+      transparent 0,
+      transparent calc(var(--grid-size) - 1px),
+      var(--grid-dark-line) calc(var(--grid-size) - 1px),
+      var(--grid-dark-line) var(--grid-size)
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0,
+      transparent calc(var(--grid-size) - 1px),
+      var(--grid-dark-line) calc(var(--grid-size) - 1px),
+      var(--grid-dark-line) var(--grid-size)
+    );
+  background-size: var(--grid-size) var(--grid-size);
+}
+
+/* Keep images and cards readable */
+.mosaic-tile,
+.testimonial-card,
+.service-card,
+.portfolio-card {
+  position: relative;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  :root {
+    --grid-size: 20px;
+    --grid-light-line: rgba(16, 33, 61, 0.07);
+    --grid-dark-line: rgba(255, 255, 255, 0.07);
+  }
+
+  body {
+    background-attachment: scroll;
+  }
 }
