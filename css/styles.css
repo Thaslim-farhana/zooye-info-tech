@@ -3197,91 +3197,65 @@ footer p.desc {
   filter: none !important;
 }
 
-/* =========================================
-   ZOOYE GLOBAL 45-DEGREE CROSS GRID
-   Light and dark theme support
-   ========================================= */
+
+/* ==========================================
+   ZOOYE — PREMIUM DIAGONAL CROSS GRID
+   ========================================== */
 
 :root {
-  --grid-size: 24px;
-  --grid-light-line: rgba(16, 33, 61, 0.09);
-  --grid-dark-line: rgba(255, 255, 255, 0.09);
+  --grid-spacing: 46px;
+  --grid-light-color: rgba(120, 155, 175, 0.13);
+  --grid-dark-color: rgba(190, 220, 235, 0.10);
 }
 
-/* Light background grid */
+/* Default light-theme grid */
 body {
   background-image:
     repeating-linear-gradient(
       45deg,
       transparent 0,
-      transparent calc(var(--grid-size) - 1px),
-      var(--grid-light-line) calc(var(--grid-size) - 1px),
-      var(--grid-light-line) var(--grid-size)
+      transparent calc(var(--grid-spacing) - 1px),
+      var(--grid-light-color) calc(var(--grid-spacing) - 1px),
+      var(--grid-light-color) var(--grid-spacing)
     ),
     repeating-linear-gradient(
       -45deg,
       transparent 0,
-      transparent calc(var(--grid-size) - 1px),
-      var(--grid-light-line) calc(var(--grid-size) - 1px),
-      var(--grid-light-line) var(--grid-size)
+      transparent calc(var(--grid-spacing) - 1px),
+      var(--grid-light-color) calc(var(--grid-spacing) - 1px),
+      var(--grid-light-color) var(--grid-spacing)
     );
-  background-size: var(--grid-size) var(--grid-size);
+  background-size: var(--grid-spacing) var(--grid-spacing);
   background-attachment: fixed;
 }
 
-/* Keep the page background visible through light sections */
-main,
-section,
-footer {
-  background-color: transparent;
-}
-
-/* Dark sections: use a lighter cross grid */
-.dark-section,
-.dark-section *,
-.hero-dark,
-.hero-dark *,
-footer.dark,
-footer.dark * {
-  --grid-current-line: var(--grid-dark-line);
-}
-
-/* Dark surfaces with their own background colors */
+/* Dark gradient panels, like your screenshot */
 .dark-section,
 .hero-dark,
-footer.dark {
+.final-cta,
+.final-cta-inner {
   background-image:
     repeating-linear-gradient(
       45deg,
       transparent 0,
-      transparent calc(var(--grid-size) - 1px),
-      var(--grid-dark-line) calc(var(--grid-size) - 1px),
-      var(--grid-dark-line) var(--grid-size)
+      transparent calc(var(--grid-spacing) - 1px),
+      var(--grid-dark-color) calc(var(--grid-spacing) - 1px),
+      var(--grid-dark-color) var(--grid-spacing)
     ),
     repeating-linear-gradient(
       -45deg,
       transparent 0,
-      transparent calc(var(--grid-size) - 1px),
-      var(--grid-dark-line) calc(var(--grid-size) - 1px),
-      var(--grid-dark-line) var(--grid-size)
+      transparent calc(var(--grid-spacing) - 1px),
+      var(--grid-dark-color) calc(var(--grid-spacing) - 1px),
+      var(--grid-dark-color) var(--grid-spacing)
     );
-  background-size: var(--grid-size) var(--grid-size);
+  background-size: var(--grid-spacing) var(--grid-spacing);
 }
 
-/* Keep images and cards readable */
-.mosaic-tile,
-.testimonial-card,
-.service-card,
-.portfolio-card {
-  position: relative;
-}
-
-/* Mobile adjustments */
+/* Mobile */
 @media (max-width: 768px) {
   :root {
-    --grid-size: 20px;
-    --grid-light-line: rgba(16, 33, 61, 0.07);
-    --grid-dark-line: rgba(255, 255, 255, 0.07);
+    --grid-spacing: 32px;
   }
 
   body {
