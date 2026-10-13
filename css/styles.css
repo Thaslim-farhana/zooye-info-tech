@@ -4094,6 +4094,210 @@ form {
   .contact-section .contact-intro h1 {
     font-size: 29px;
   }
+  
+/* ==========================================
+   ZOOYE CONTACT SECTION — REFINED DESIGN
+========================================== */
+
+.contact-section {
+  position: relative;
+  overflow: hidden;
+  padding: 64px 0 80px;
+  background-color: #f7f9fc;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0,
+      transparent 29px,
+      rgba(105, 125, 160, 0.10) 29px,
+      rgba(105, 125, 160, 0.10) 30px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0,
+      transparent 29px,
+      rgba(105, 125, 160, 0.10) 29px,
+      rgba(105, 125, 160, 0.10) 30px
+    );
+  background-size: 42px 42px;
+}
+
+/* Center the content */
+.contact-section .wrap {
+  width: min(100% - 40px, 1340px);
+  margin-inline: auto;
+}
+
+/* Two-column layout */
+.contact-section .contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.25fr);
+  align-items: start;
+  gap: 48px;
+}
+
+/* Left content */
+.contact-section .contact-info {
+  padding-top: 24px;
+}
+
+.contact-section .contact-info h2 {
+  margin: 24px 0 14px;
+  color: #13243b;
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: 750;
+  line-height: 1.25;
+  letter-spacing: -0.8px;
+}
+
+.contact-section .contact-info p {
+  margin: 0 0 16px;
+  color: #61748e;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.contact-section .contact-info a {
+  color: #009e9a;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-section .contact-info a:hover {
+  color: #087b78;
+}
+
+/* Illustration */
+.contact-section .contact-illustration {
+  width: 190px;
+  max-width: 100%;
+  margin-bottom: 22px;
+}
+
+/* Enquiry form card */
+.contact-section .contact-form {
+  min-width: 0;
+  padding: 34px 38px;
+  border: 1px solid #dce5ef;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 12px 35px rgba(25, 48, 76, 0.07);
+  position: relative;
+}
+
+/* Teal-to-gold top accent */
+.contact-section .contact-form::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 20px 20px 0 0;
+  background: linear-gradient(
+    90deg,
+    #009e9a,
+    #36b69c,
+    #f3c53b
+  );
+}
+
+/* Form fields */
+.contact-section .contact-form label {
+  display: block;
+  margin-bottom: 9px;
+  color: #14243b;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.contact-section .contact-form input,
+.contact-section .contact-form select,
+.contact-section .contact-form textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-height: 52px;
+  padding: 13px 16px;
+  border: 1px solid #d7e1ed;
+  border-radius: 12px;
+  background: #fff;
+  color: #15243a;
+  font: inherit;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-section .contact-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.contact-section .contact-form input:focus,
+.contact-section .contact-form select:focus,
+.contact-section .contact-form textarea:focus {
+  border-color: #00a39d;
+  box-shadow: 0 0 0 3px rgba(0, 163, 157, 0.10);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .contact-section {
+    padding: 48px 0 60px;
+  }
+
+  .contact-section .contact-layout {
+    grid-template-columns: 1fr 1.15fr;
+    gap: 28px;
+  }
+
+  .contact-section .contact-form {
+    padding: 28px 24px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 680px) {
+  .contact-section {
+    padding: 36px 0 48px;
+  }
+
+  .contact-section .wrap {
+    width: calc(100% - 32px);
+  }
+
+  .contact-section .contact-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .contact-section .contact-info {
+    padding-top: 8px;
+  }
+
+  .contact-section .contact-info h2 {
+    margin-top: 18px;
+    font-size: 29px;
+  }
+
+  .contact-section .contact-info p {
+    font-size: 15px;
+  }
+
+  .contact-section .contact-form {
+    padding: 26px 18px;
+    border-radius: 16px;
+  }
+
+  .contact-section .contact-form input,
+  .contact-section .contact-form select,
+  .contact-section .contact-form textarea {
+    min-height: 48px;
+    font-size: 14px;
+  }
+}
+
 
   .contact-section .contact-intro h2 {
     font-size: 20px;
