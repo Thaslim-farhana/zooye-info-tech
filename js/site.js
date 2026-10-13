@@ -159,7 +159,7 @@
 // replace a gradient tile. If the file is missing, that tile keeps its
 // gradient + tag automatically — never an empty or broken image.
 const mosaicItems = [
-  { tag:"Real Estate", image:"assets/images/real-estate.jpg", grad:"linear-gradient(160deg,#0F2A44,#1C4A5C)" },
+  { tag:"Real Estate", image:"assets/images/realestate.png", grad:"linear-gradient(160deg,#0F2A44,#1C4A5C)" },
   { tag:"Education", image:"assets/images/mindcentrix.png", grad:"linear-gradient(160deg,#0B2540,#3A6E7A)" },
   { tag:"Travel", image:"assets/images/nitro9.png", grad:"linear-gradient(160deg,#0E2038,#1F5C6B)" },
   { tag:"E-Commerce", image:"assets/images/e-commerce.png", grad:"linear-gradient(160deg,#0A0F1C,#25324A)" },
