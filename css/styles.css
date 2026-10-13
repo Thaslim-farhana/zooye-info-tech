@@ -3198,46 +3198,47 @@ footer p.desc {
 }
 
 
-/* Zestcode-style diagonal cross-grid background */
+/* ZOOYE — Zestcode-inspired background */
 :root {
-  --grid-spacing: 42px;
-  --grid-line-color: rgba(105, 83, 220, 0.10);
+  --grid-gap: 120px;
+  --grid-color: rgba(103, 76, 220, 0.10);
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #fff;
   background-image:
     repeating-linear-gradient(
       30deg,
       transparent 0,
-      transparent calc(var(--grid-spacing) - 1px),
-      var(--grid-line-color) calc(var(--grid-spacing) - 1px),
-      var(--grid-line-color) var(--grid-spacing)
+      transparent 59.5px,
+      var(--grid-color) 60px,
+      transparent 60.5px,
+      transparent 120px
     ),
     repeating-linear-gradient(
       150deg,
       transparent 0,
-      transparent calc(var(--grid-spacing) - 1px),
-      var(--grid-line-color) calc(var(--grid-spacing) - 1px),
-      var(--grid-line-color) var(--grid-spacing)
+      transparent 59.5px,
+      var(--grid-color) 60px,
+      transparent 60.5px,
+      transparent 120px
     );
-  background-size: 72px 72px;
   background-attachment: fixed;
 }
 
-/* Allow the global grid to show through page sections */
+/* Show the grid through light page sections */
 main,
 section {
   background-color: transparent;
 }
 
-/* Keep cards and content surfaces readable */
+/* Keep content surfaces readable */
 .service-card,
 .portfolio-card,
 .testimonial-card,
 .faq-card,
 form {
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 @media (max-width: 768px) {
