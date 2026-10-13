@@ -189,7 +189,7 @@ rows.forEach(row => {
   container.innerHTML = doubled.map(tileHTML).join('');
 });
 
-});
+
 
   /* ---------------- TESTIMONIALS (PLACEHOLDER, two-row scroll) ---------------- */
 const testimonials = [
