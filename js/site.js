@@ -164,7 +164,7 @@ const mosaicItems = [
   { tag:"Travel", image:"assets/images/nitro9.png", grad:"linear-gradient(160deg,#0E2038,#1F5C6B)" },
   { tag:"E-Commerce", image:"assets/images/e-commerce.png", grad:"linear-gradient(160deg,#0A0F1C,#25324A)" },
   { tag:"Healthcare", image:"assets/images/healthcare.jpg", grad:"linear-gradient(160deg,#122A3D,#1D5A52)" },
-  { tag:"Food & Beverage", image:"assets/images/food.jpg", grad:"linear-gradient(160deg,#241417,#5C2A2A)" },
+  { tag:"Food & Beverage", image:"assets/images/vv industries.png", grad:"linear-gradient(160deg,#241417,#5C2A2A)" },
   { tag:"SaaS", image:"assets/images/software.png", grad:"linear-gradient(160deg,#0D1B2E,#2E4C6B)" },
   { tag:"E-Commerce", image:"assets/images/Export.png", grad:"linear-gradient(160deg,#1B1420,#4A2E4E)" },
 ];
