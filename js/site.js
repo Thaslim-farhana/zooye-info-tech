@@ -178,9 +178,17 @@ const rows = [
   { id:'mosaic-row-2', items:[mosaicItems[4], mosaicItems[5], mosaicItems[6], mosaicItems[7]] },
   { id:'mosaic-row-3', items:[mosaicItems[2], mosaicItems[7], mosaicItems[0], mosaicItems[5]] },
 ];
+
 rows.forEach(row => {
+  const container = document.getElementById(row.id);
+
+  // Safely skip missing portfolio rows
+  if (!container) return;
+
   const doubled = row.items.concat(row.items);
-  document.getElementById(row.id).innerHTML = doubled.map(tileHTML).join('');
+  container.innerHTML = doubled.map(tileHTML).join('');
+});
+
 });
 
   /* ---------------- TESTIMONIALS (PLACEHOLDER, two-row scroll) ---------------- */
