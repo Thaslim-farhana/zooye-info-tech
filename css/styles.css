@@ -61,8 +61,8 @@ body {
   color: var(--ink);
   background-color: var(--bg);
   background-image:
-    linear-gradient(rgba(16, 33, 61, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(16, 33, 61, 0.06) 1px, transparent 1px);
+    repeating-linear-gradient(45deg, rgba(0, 143, 140, 0.025) 0 1px, transparent 1px 34px),
+    repeating-linear-gradient(-45deg, rgba(11, 25, 48, 0.025) 0 1px, transparent 1px 34px);
   background-size: 48px 48px;
   background-position: center top;
   background-attachment: fixed;
@@ -1337,493 +1337,6 @@ section {
   font-size: 13px;
   color: var(--dark-muted);
   font-weight: 500;
-}
-
-/* ==========================================
-   ZOOYE ARCHITECTURE PIPELINE
-========================================== */
-
-.zooye-architecture {
-  --pipeline-bg: #1c2b40;
-  --pipeline-card: #243349;
-  --pipeline-teal: #19b9b1;
-  --pipeline-muted: #9aa9bd;
-  --pipeline-border: #344359;
-
-  width: 100%;
-  padding: 48px 20px 64px;
-  box-sizing: border-box;
-  font-family: inherit;
-  overflow: hidden;
-}
-
-.zooye-architecture *,
-.zooye-architecture *::before,
-.zooye-architecture *::after {
-  box-sizing: border-box;
-}
-
-.architecture-panel {
-  position: relative;
-  width: 100%;
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 30px;
-  background: var(--pipeline-bg);
-  color: #f7f9fc;
-  border: 1px solid #40516a;
-  border-radius: 25px;
-  box-shadow: 0 20px 60px rgba(15, 29, 47, 0.16);
-}
-
-/* Header */
-
-.architecture-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid rgba(170, 190, 215, 0.12);
-}
-
-.architecture-heading {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  color: #94a3b8;
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 0.7px;
-}
-
-.window-dots {
-  display: flex;
-  gap: 7px;
-  flex-shrink: 0;
-}
-
-.window-dots span {
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: #ff6268;
-}
-
-.window-dots span:nth-child(2) {
-  background: #ffbd36;
-}
-
-.window-dots span:nth-child(3) {
-  background: #27d05b;
-}
-
-.live-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 9px 14px;
-  border: 1px solid rgba(25, 185, 177, 0.28);
-  border-radius: 30px;
-  background: rgba(13, 164, 159, 0.13);
-  color: var(--pipeline-teal);
-  font-size: 12px;
-  font-weight: 800;
-  white-space: nowrap;
-}
-
-.live-badge i {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--pipeline-teal);
-  box-shadow: 0 0 10px rgba(25, 185, 177, 0.6);
-}
-
-/* Pipeline steps */
-
-.pipeline-flow {
-  padding-top: 23px;
-}
-
-.pipeline-step {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  min-height: 74px;
-  padding: 14px 20px;
-  border: 1px solid var(--pipeline-border);
-  border-radius: 17px;
-  background: var(--pipeline-card);
-  transition: border-color 0.25s ease,
-              transform 0.25s ease,
-              background 0.25s ease;
-}
-
-.pipeline-step:hover {
-  transform: translateY(-2px);
-  border-color: rgba(25, 185, 177, 0.55);
-}
-
-.pipeline-step.active,
-.pipeline-step.revenue-step {
-  border-color: rgba(0, 177, 177, 0.42);
-  background: #173746;
-}
-
-.step-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 44px;
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(25, 185, 177, 0.25);
-  border-radius: 13px;
-  background: rgba(17, 167, 163, 0.12);
-  color: var(--pipeline-teal);
-}
-
-.step-icon svg {
-  width: 23px;
-  height: 23px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.revenue-step .step-icon {
-  background: #009f9b;
-  color: #fff;
-  border-color: #009f9b;
-}
-
-.step-content {
-  flex: 1;
-  min-width: 0;
-}
-
-.step-content h3 {
-  margin: 0 0 4px;
-  color: #f8fafc;
-  font-size: 15px;
-  line-height: 1.3;
-  font-weight: 800;
-  letter-spacing: -0.3px;
-}
-
-.step-content p {
-  margin: 0;
-  color: var(--pipeline-muted);
-  font-size: 14px;
-  line-height: 1.45;
-}
-
-.revenue-step .step-content h3 {
-  color: var(--pipeline-teal);
-}
-
-.revenue-step .step-content p {
-  color: #d4deea;
-}
-
-.step-status,
-.growth-status {
-  flex-shrink: 0;
-  padding: 8px 11px;
-  border-radius: 9px;
-  background: #304157;
-  color: #cbd5e1;
-  font-size: 12px;
-  line-height: 1.2;
-  font-weight: 800;
-  text-align: center;
-  white-space: nowrap;
-}
-
-.growth-status {
-  background: #23bcb3;
-  color: #092d38;
-}
-
-/* Connecting arrows */
-
-.pipeline-arrow {
-  height: 43px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #168d91;
-  font-size: 23px;
-  font-weight: 500;
-  line-height: 1;
-}
-
-/* Bottom features */
-
-.architecture-features {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 23px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(170, 190, 215, 0.12);
-}
-
-.feature-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 9px;
-  min-height: 72px;
-  padding: 13px 8px;
-  border-radius: 12px;
-  background: #142135;
-  text-align: center;
-}
-
-.feature-card span {
-  color: #71839b;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.7px;
-}
-
-.feature-card strong {
-  color: var(--pipeline-teal);
-  font-size: 15px;
-  line-height: 1.3;
-  font-weight: 800;
-}
-
-/* Floating badges */
-
-.floating-label {
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 17px;
-  border: 1px solid #344860;
-  border-radius: 30px;
-  background: #142236;
-  color: #f8fafc;
-  font-size: 13px;
-  font-weight: 800;
-  white-space: nowrap;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-.label-top {
-  top: -17px;
-  right: -13px;
-}
-
-.label-bottom {
-  bottom: -17px;
-  left: -13px;
-}
-
-.shield-icon {
-  color: #f4c536;
-  font-size: 21px;
-  line-height: 1;
-}
-
-.lightning-icon {
-  color: #ffd43b;
-  font-size: 25px;
-  line-height: 1;
-}
-
-/* Tablet */
-
-@media (max-width: 768px) {
-  .zooye-architecture {
-    padding: 38px 16px 48px;
-  }
-
-  .architecture-panel {
-    padding: 22px;
-    border-radius: 20px;
-  }
-
-  .architecture-heading {
-    font-size: 12px;
-    letter-spacing: 0.3px;
-  }
-
-  .pipeline-step {
-    gap: 12px;
-    padding: 13px;
-  }
-
-  .step-content h3 {
-    font-size: 14px;
-  }
-
-  .step-content p {
-    font-size: 12px;
-  }
-
-  .step-status,
-  .growth-status {
-    font-size: 11px;
-    padding: 7px 8px;
-  }
-
-  .label-top {
-    right: 8px;
-  }
-
-  .label-bottom {
-    left: 8px;
-  }
-}
-
-/* Mobile */
-
-@media (max-width: 520px) {
-  .zooye-architecture {
-    padding: 32px 12px 42px;
-  }
-
-  .architecture-panel {
-    padding: 18px 13px;
-    border-radius: 17px;
-  }
-
-  .architecture-header {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 12px;
-    padding-bottom: 16px;
-  }
-
-  .architecture-heading {
-    font-size: 11px;
-    gap: 9px;
-  }
-
-  .window-dots {
-    gap: 5px;
-  }
-
-  .window-dots span {
-    width: 9px;
-    height: 9px;
-  }
-
-  .live-badge {
-    padding: 7px 11px;
-    font-size: 11px;
-  }
-
-  .pipeline-flow {
-    padding-top: 17px;
-  }
-
-  .pipeline-step {
-    display: grid;
-    grid-template-columns: 39px minmax(0, 1fr);
-    gap: 10px;
-    padding: 12px;
-    border-radius: 13px;
-  }
-
-  .step-icon {
-    grid-row: 1 / span 2;
-    width: 39px;
-    height: 39px;
-    flex-basis: 39px;
-    border-radius: 11px;
-  }
-
-  .step-icon svg {
-    width: 21px;
-    height: 21px;
-  }
-
-  .step-content h3 {
-    font-size: 13px;
-  }
-
-  .step-content p {
-    font-size: 12px;
-    line-height: 1.45;
-  }
-
-  .step-status,
-  .growth-status {
-    grid-column: 2;
-    justify-self: start;
-    margin-top: 2px;
-    font-size: 10px;
-  }
-
-  .pipeline-arrow {
-    height: 32px;
-    font-size: 20px;
-  }
-
-  .architecture-features {
-    gap: 7px;
-    margin-top: 18px;
-    padding-top: 16px;
-  }
-
-  .feature-card {
-    min-height: 65px;
-    gap: 7px;
-    padding: 10px 4px;
-    border-radius: 9px;
-  }
-
-  .feature-card span {
-    font-size: 9px;
-    letter-spacing: 0.3px;
-  }
-
-  .feature-card strong {
-    font-size: 11px;
-  }
-
-  .floating-label {
-    gap: 6px;
-    padding: 9px 11px;
-    font-size: 10px;
-  }
-
-  .label-top {
-    top: -14px;
-    right: 6px;
-  }
-
-  .label-bottom {
-    bottom: -14px;
-    left: 6px;
-  }
-
-  .shield-icon {
-    font-size: 16px;
-  }
-
-  .lightning-icon {
-    font-size: 19px;
-  }
-}
-
-/* Accessibility */
-
-@media (prefers-reduced-motion: reduce) {
-  .pipeline-step {
-    transition: none;
-  }
 }
 
 /* ================= WHITE LABEL PARTNERSHIP SECTION ================= */
@@ -3664,1661 +3177,1916 @@ footer p.desc {
 
 .wl-mock-status.done{ color:var(--turquoise); background:rgba(18,166,160,0.16); }
 
-/* FIX: White-label feature text visibility */
-.whitelabel-section .whitelabel-pills .wl-pill {
-  color: #0B1930 !important;
-  opacity: 1 !important;
-  -webkit-text-fill-color: #0B1930 !important;
-  filter: none !important;
-}
+/* ==========================================================================
+   ENHANCED DESIGN SYSTEM COMPONENTS (ZOOYE INFO TECH REFINEMENT)
+   ========================================================================== */
 
-.whitelabel-section .whitelabel-pills .wl-pill svg {
-  color: #009E98 !important;
-  opacity: 1 !important;
-  filter: none !important;
-}
-
-/* Ensure the section does not fade its content */
-.whitelabel-section .whitelabel-banner > div:first-child {
-  opacity: 1 !important;
-  filter: none !important;
-}
-
-
-/* ZOOYE — Zestcode-inspired background */
-:root {
-  --grid-gap: 120px;
-  --grid-color: rgba(103, 76, 220, 0.10);
-}
-
-body {
-  background-color: #fff;
-  background-image:
-    repeating-linear-gradient(
-      30deg,
-      transparent 0,
-      transparent 59.5px,
-      var(--grid-color) 60px,
-      transparent 60.5px,
-      transparent 120px
-    ),
-    repeating-linear-gradient(
-      150deg,
-      transparent 0,
-      transparent 59.5px,
-      var(--grid-color) 60px,
-      transparent 60.5px,
-      transparent 120px
-    );
-  background-attachment: fixed;
-}
-
-/* Show the grid through light page sections */
-main,
-section {
-  background-color: transparent;
-}
-
-/* Keep content surfaces readable */
-.service-card,
-.portfolio-card,
-.testimonial-card,
-.faq-card,
-form {
-  background-color: #fff;
-}
-
-@media (max-width: 768px) {
-  body {
-    background-attachment: scroll;
-  }
-}
-
-
-/* ==========================================
-   ZOOYE PIPELINE — PREMIUM VISUAL REFINEMENT
-   Keep existing HTML and dark hero background
-========================================== */
-
-.zooye-architecture {
-  background: transparent !important;
-  padding: 40px 20px 48px;
-}
-
-.zooye-architecture .architecture-panel {
+/* ---------- 1. TECHNOLOGY GRIDS (LIGHT & DARK IDENTITY) ---------- */
+.tech-grid-light {
   position: relative;
-  isolation: isolate;
-  background: linear-gradient(
-    145deg,
-    #1c2b40 0%,
-    #19283c 65%,
-    #152c3b 100%
-  ) !important;
-  border: 1px solid rgba(115, 150, 181, 0.25);
-  border-radius: 24px;
-  box-shadow:
-    0 24px 60px rgba(0, 0, 0, 0.22),
-    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  background-color: #FFFFFF;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(11, 25, 48, 0.035) 0 1px, transparent 1px 30px),
+    repeating-linear-gradient(-45deg, rgba(0, 143, 140, 0.03) 0 1px, transparent 1px 30px);
+  background-size: 42px 42px;
 }
 
-/* Subtle teal ambient glow */
-.zooye-architecture .architecture-panel::before {
+.tech-grid-light::before {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: -1;
-  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 0%, rgba(0, 143, 140, 0.06) 0%, transparent 65%);
+}
+
+.tech-grid-dark {
+  position: relative;
+  background-color: var(--dark-bg);
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 30px),
+    repeating-linear-gradient(-45deg, rgba(18, 166, 160, 0.045) 0 1px, transparent 1px 30px);
+  background-size: 42px 42px;
+  color: var(--dark-text);
+}
+
+.tech-grid-dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(
-      circle at 100% 0%,
-      rgba(0, 174, 169, 0.09),
-      transparent 36%
-    );
+    radial-gradient(circle at 20% 20%, rgba(0, 143, 140, 0.16) 0%, transparent 55%),
+    radial-gradient(circle at 80% 80%, rgba(18, 166, 160, 0.12) 0%, transparent 55%);
 }
 
-/* Keep the title and live badge on one line on desktop */
-.zooye-architecture .architecture-header {
+.tech-grid-dark .sec-head h2,
+.tech-grid-dark h2,
+.tech-grid-dark h3,
+.tech-grid-dark h4 {
+  color: #FFFFFF;
+}
+
+.tech-grid-dark .sec-head p.sub,
+.tech-grid-dark p {
+  color: #94A3B8;
+}
+
+/* Diagonal micro-accent lines */
+.tech-grid-diagonal {
+  background-image:
+    repeating-linear-gradient(45deg, rgba(0, 143, 140, 0.025) 0px, rgba(0, 143, 140, 0.025) 1px, transparent 1px, transparent 32px),
+    repeating-linear-gradient(-45deg, rgba(0, 143, 140, 0.025) 0px, rgba(0, 143, 140, 0.025) 1px, transparent 1px, transparent 32px);
+}
+
+/* ---------- 2. SOPHISTICATED HERO TECHNOLOGY VISUAL ---------- */
+.hero-tech-visual {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.tech-system-card {
+  position: relative;
+  background: rgba(14, 28, 51, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 24px 60px -10px rgba(7, 16, 30, 0.5), 0 0 0 1px rgba(0, 143, 140, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  overflow: hidden;
+}
+
+.tech-system-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--teal-2), var(--gold), transparent);
+}
+
+.tech-card-header {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid rgba(155, 180, 205, 0.14);
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.zooye-architecture .architecture-heading {
-  min-width: 0;
+.tech-header-left {
+  display: flex;
+  align-items: center;
   gap: 10px;
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.terminal-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.terminal-dot.red { background: #FF5F56; }
+.terminal-dot.yellow { background: #FFBD2E; }
+.terminal-dot.green { background: #27C93F; }
+
+.tech-header-title {
+  font-family: 'Manrope', sans-serif;
   font-size: 12px;
-  letter-spacing: 0.6px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94A3B8;
 }
 
-.zooye-architecture .architecture-heading > span {
+.tech-live-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--teal-2);
+  background: rgba(0, 143, 140, 0.18);
+  border: 1px solid rgba(0, 143, 140, 0.3);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.tech-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--teal-2);
+  box-shadow: 0 0 8px var(--teal-2);
+  animation: live-blink 2s ease-in-out infinite;
+}
+
+@keyframes live-blink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* Node Architecture Flow */
+.tech-flow-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.flow-node-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  transition: all 0.25s ease;
+}
+
+.flow-node-item:hover,
+.flow-node-item.active {
+  background: rgba(0, 143, 140, 0.12);
+  border-color: rgba(0, 143, 140, 0.45);
+  transform: translateX(4px);
+}
+
+.flow-node-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.flow-icon-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(0, 143, 140, 0.15);
+  border: 1px solid rgba(0, 143, 140, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal-2);
+  flex-shrink: 0;
+}
+
+.flow-icon-circle svg {
+  width: 17px;
+  height: 17px;
+}
+
+.flow-node-text h4 {
+  color: #FFFFFF;
+  font-size: 13.5px;
+  font-weight: 700;
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.flow-node-text p {
+  color: #94A3B8;
+  font-size: 11.5px;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.flow-node-status {
+  font-size: 11px;
+  font-weight: 600;
+  color: #CBD5E1;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 4px 8px;
+  border-radius: 6px;
   white-space: nowrap;
 }
 
-.zooye-architecture .live-badge {
+.flow-arrow-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 14px;
+  color: var(--teal-2);
+  opacity: 0.6;
+}
+
+.flow-arrow-connector svg {
+  width: 14px;
+  height: 14px;
+  animation: pulse-down 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse-down {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(2px); opacity: 1; }
+}
+
+.tech-telemetry-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.telemetry-item {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  padding: 8px 10px;
+  text-align: center;
+}
+
+.telemetry-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748B;
+  display: block;
+}
+
+.telemetry-val {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--teal-2);
+}
+
+/* Floating Technology Pills */
+.hero-floating-pill {
+  position: absolute;
+  z-index: 3;
+  background: rgba(11, 25, 48, 0.9);
+  border: 1px solid rgba(0, 143, 140, 0.35);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #FFFFFF;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(8px);
+}
+
+.hero-floating-pill svg {
+  width: 15px;
+  height: 15px;
+  color: var(--gold);
+}
+
+.hero-pill-top-right {
+  top: -12px;
+  right: -10px;
+  animation: float-slow 4s ease-in-out infinite alternate;
+}
+
+.hero-pill-bottom-left {
+  bottom: -12px;
+  left: -10px;
+  animation: float-slow 4.5s ease-in-out 0.8s infinite alternate;
+}
+
+@keyframes float-slow {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
+/* ---------- 3. TECHNOLOGY ECOSYSTEM STRIP / MARQUEE ---------- */
+.tech-ecosystem-strip {
+  background: #0B1930;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px 0;
+  overflow: hidden;
+}
+
+.tech-ecosystem-header {
+  text-align: center;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal-2);
+  margin-bottom: 16px;
+}
+
+.tech-pills-marquee {
+  display: flex;
+  gap: 16px;
+  overflow: hidden;
+  user-select: none;
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.tech-pills-track {
+  display: flex;
+  gap: 12px;
   flex-shrink: 0;
-  padding: 8px 11px;
+  animation: scroll-marquee 30s linear infinite;
+}
+
+@keyframes scroll-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.tech-badge-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #E2E8F0;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.tech-badge-item:hover {
+  background: rgba(0, 143, 140, 0.18);
+  border-color: rgba(0, 143, 140, 0.4);
+  color: #FFFFFF;
+}
+
+.tech-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--turquoise);
+}
+
+/* ---------- 4. BUSINESS PROBLEMS ("WHERE BUSINESSES LOSE TIME") ---------- */
+.problems-section {
+  padding: 88px 0;
+  position: relative;
+}
+
+.problems-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+@media (max-width: 860px) {
+  .problems-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+.problem-card {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 32px 28px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.problem-card:hover {
+  border-color: rgba(0, 143, 140, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px -8px rgba(11, 25, 48, 0.08);
+}
+
+.problem-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.problem-number {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--teal);
+  background: rgba(0, 143, 140, 0.08);
+  border: 1px solid rgba(0, 143, 140, 0.16);
+  padding: 4px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+
+.problem-block {
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px dashed var(--line);
+}
+
+.tag-problem {
   font-size: 11px;
-  box-shadow: inset 0 0 15px rgba(19, 180, 175, 0.04);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #E53E3E;
+  margin-bottom: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
 
-/* Refined workflow cards */
-.zooye-architecture .pipeline-step {
-  min-height: 76px;
-  gap: 14px;
-  padding: 15px 16px;
-  border: 1px solid rgba(130, 155, 185, 0.15);
-  border-radius: 16px;
-  background: rgba(38, 54, 76, 0.92) !important;
-  transition:
-    transform 220ms ease,
-    border-color 220ms ease,
-    box-shadow 220ms ease,
-    background 220ms ease;
+.tag-problem::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #E53E3E;
 }
 
-.zooye-architecture .pipeline-step:hover {
-  transform: translateY(-2px);
-  border-color: rgba(25, 185, 177, 0.48);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+.problem-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.35;
 }
 
-.zooye-architecture .pipeline-step.active,
-.zooye-architecture .pipeline-step.revenue-step {
-  background: linear-gradient(
-    110deg,
-    #153746,
-    #173444
-  ) !important;
-  border-color: rgba(12, 174, 171, 0.48);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+.solution-block {
+  margin-top: 4px;
 }
 
-/* Consistent icon containers */
-.zooye-architecture .step-icon {
-  flex: 0 0 44px;
+.tag-solution {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--teal);
+  margin-bottom: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tag-solution::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+
+.solution-block p {
+  font-size: 14.5px;
+  color: var(--ink-light);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.problem-card-action {
+  margin-top: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--teal);
+  transition: gap 0.2s ease;
+}
+
+.problem-card:hover .problem-card-action {
+  gap: 12px;
+}
+
+/* ---------- 5. FIVE CORE CAPABILITIES ---------- */
+.capabilities-section {
+  padding: 88px 0;
+  position: relative;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+@media (max-width: 1024px) {
+  .capabilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.capability-card {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.26s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.capability-card:hover {
+  border-color: rgba(0, 143, 140, 0.45);
+  box-shadow: 0 16px 36px -8px rgba(11, 25, 48, 0.1);
+  transform: translateY(-4px);
+}
+
+.capability-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.cap-number {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--teal);
+}
+
+.cap-icon-box {
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: rgba(17, 167, 163, 0.10);
-  border-color: rgba(25, 185, 177, 0.24);
+  background: rgba(0, 143, 140, 0.08);
+  border: 1px solid rgba(0, 143, 140, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal);
+  transition: all 0.25s ease;
 }
 
-.zooye-architecture .step-icon svg {
+.capability-card:hover .cap-icon-box {
+  background: var(--teal);
+  color: #FFFFFF;
+}
+
+.cap-icon-box svg {
   width: 22px;
   height: 22px;
 }
 
-/* Improve heading and description hierarchy */
-.zooye-architecture .step-content h3 {
-  margin-bottom: 5px;
-  font-size: 14px;
-  line-height: 1.35;
-  letter-spacing: -0.25px;
+.capability-card h3 {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 12px;
+  line-height: 1.3;
 }
 
-.zooye-architecture .step-content p {
-  color: #a6b5c8;
-  font-size: 13px;
-  line-height: 1.5;
+.capability-card p {
+  font-size: 14.5px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 24px;
 }
 
-/* Smaller, cleaner status badges */
-.zooye-architecture .step-status,
-.zooye-architecture .growth-status {
-  padding: 8px 10px;
-  border-radius: 8px;
-  font-size: 11px;
-  letter-spacing: -0.1px;
-}
-
-.zooye-architecture .step-status {
-  background: #304258;
-  color: #d2dce9;
-}
-
-.zooye-architecture .growth-status {
-  background: #21b9b1;
-  color: #082a35;
-}
-
-/* More balanced connector spacing */
-.zooye-architecture .pipeline-arrow {
-  height: 36px;
-  color: #17a6a5;
-  font-size: 22px;
-}
-
-/* Bottom feature cards */
-.zooye-architecture .architecture-features {
-  gap: 10px;
-  margin-top: 21px;
-  padding-top: 19px;
-  border-top-color: rgba(155, 180, 205, 0.14);
-}
-
-.zooye-architecture .feature-card {
-  min-height: 76px;
-  gap: 8px;
-  padding: 13px 8px;
-  border: 1px solid rgba(130, 155, 185, 0.06);
-  background: #142135;
-  transition: border-color 200ms ease;
-}
-
-.zooye-architecture .feature-card:hover {
-  border-color: rgba(25, 185, 177, 0.30);
-}
-
-.zooye-architecture .feature-card span {
-  font-size: 10px;
-  letter-spacing: 0.8px;
-}
-
-.zooye-architecture .feature-card strong {
-  font-size: 14px;
-}
-
-/* Floating labels */
-.zooye-architecture .floating-label {
-  border: 1px solid #344860;
-  background: #142236;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
-}
-
-@media (max-width: 768px) {
-  .zooye-architecture {
-    padding: 32px 16px 42px;
-  }
-
-  .zooye-architecture .architecture-panel {
-    padding: 22px 18px;
-  }
-
-  .zooye-architecture .architecture-header {
-    flex-wrap: wrap;
-  }
-
-  .zooye-architecture .architecture-heading {
-    font-size: 11px;
-  }
-
-  .zooye-architecture .pipeline-step {
-    gap: 11px;
-    padding: 13px;
-  }
-}
-
-@media (max-width: 520px) {
-  .zooye-architecture {
-    padding: 28px 12px 38px;
-  }
-
-  
-/* Remove white background behind the architecture pipeline */
-.zooye-architecture,
-.zooye-architecture .architecture-panel,
-.zooye-architecture .pipeline-visual,
-.zooye-architecture .pipeline-container {
-  background: transparent !important;
-  background-color: transparent !important;
-  box-shadow: none;
-}
-
-/* Keep the actual pipeline panel dark */
-.zooye-architecture .architecture-panel {
-  background: #1c2b40 !important;
-  border: 1px solid #344359;
-  border-radius: 25px;
-}
-
-/* Remove white backgrounds from common hero wrappers */
-.hero,
-.hero-content,
-.hero-visual,
-.hero-image,
-.hero-illustration {
-  background-color: transparent;
-}
-
-/* Prevent a white image frame around the pipeline */
-.zooye-architecture img {
-  background: transparent;
-}
-
-  .zooye-architecture .architecture-panel {
-    padding: 18px 12px;
-    border-radius: 18px;
-  }
-
-  .zooye-architecture .architecture-header {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .zooye-architecture .architecture-heading {
-    font-size: 10px;
-    letter-spacing: 0.3px;
-  }
-
-  .zooye-architecture .pipeline-step {
-    display: grid;
-    grid-template-columns: 38px minmax(0, 1fr);
-    gap: 9px;
-    padding: 12px;
-  }
-
-  .zooye-architecture .step-icon {
-    grid-row: 1 / span 2;
-    width: 38px;
-    height: 38px;
-  }
-
-  .zooye-architecture .step-content h3 {
-    font-size: 12px;
-  }
-
-  .zooye-architecture .step-content p {
-    font-size: 11px;
-  }
-
-  .zooye-architecture .step-status,
-  .zooye-architecture .growth-status {
-    grid-column: 2;
-    justify-self: start;
-    margin-top: 2px;
-  }
-
-  .zooye-architecture .architecture-features {
-    gap: 6px;
-  }
-
-  .zooye-architecture .feature-card strong {
-    font-size: 11px;
-  }
-
-  .zooye-architecture .feature-card span {
-    font-size: 8px;
-  }
-
-  .zooye-architecture .floating-label {
-    font-size: 10px;
-    padding: 9px 11px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .zooye-architecture *,
-  .zooye-architecture *::before,
-  .zooye-architecture *::after {
-    transition: none !important;
-  }
-}
-
-
-/* ==========================================
-   ZOOYE HOME ENQUIRY — PROFESSIONAL DESIGN
-========================================== */
-
-.home-enquiry-section {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  padding: 76px 0 88px;
-  background-color: #f8fafc !important;
-
-  /* Subtle diagonal cross-grid */
-  background-image:
-    repeating-linear-gradient(
-      45deg,
-      transparent 0,
-      transparent 39px,
-      rgba(104, 125, 157, 0.09) 39px,
-      rgba(104, 125, 157, 0.09) 40px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      transparent 0,
-      transparent 39px,
-      rgba(104, 125, 157, 0.09) 39px,
-      rgba(104, 125, 157, 0.09) 40px
-    ) !important;
-  background-size: 56px 56px;
-}
-
-.home-enquiry-section .wrap {
-  width: min(100% - 40px, 1340px);
-  margin-inline: auto;
-}
-
-/* Section heading */
-
-.home-enquiry-heading {
-  max-width: 900px;
-  margin: 0 auto 38px;
-  text-align: center;
-}
-
-.home-enquiry-heading .eyebrow {
+.capability-card-link {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  padding: 9px 15px;
-  border: 1px solid rgba(0, 158, 154, 0.20);
-  border-radius: 30px;
-  background: rgba(0, 158, 154, 0.08);
-  color: #008e89;
+  gap: 8px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--teal);
+  transition: gap 0.2s ease;
+  margin-top: auto;
+}
+
+.capability-card-link svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s ease;
+}
+
+.capability-card:hover .capability-card-link svg {
+  transform: translateX(4px);
+}
+
+@media (min-width: 1025px) {
+  .capability-card.featured-cap {
+    grid-column: span 2;
+    background: linear-gradient(135deg, rgba(0, 143, 140, 0.04) 0%, rgba(18, 166, 160, 0.02) 100%), #FFFFFF;
+  }
+}
+
+/* ---------- 6. UPGRADED FEATURED WORK & CASE STUDIES ---------- */
+.featured-work-section {
+  padding: 88px 0;
+  position: relative;
+}
+
+.work-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+
+@media (max-width: 860px) {
+  .work-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.case-card {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.case-card:hover {
+  border-color: rgba(0, 143, 140, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 45px -10px rgba(11, 25, 48, 0.12);
+}
+
+.case-visual-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #0B1930;
+  overflow: hidden;
+}
+
+.case-visual-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.case-card:hover .case-visual-wrapper img {
+  transform: scale(1.04);
+}
+
+.case-industry-pill {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  background: rgba(11, 25, 48, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+
+.case-card-body {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.case-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.case-tech-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--teal);
+  background: rgba(0, 143, 140, 0.08);
+  border: 1px solid rgba(0, 143, 140, 0.15);
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+
+.case-card-body h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.case-card-body p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.case-card-footer {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.case-view-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--teal);
+  transition: gap 0.2s ease;
+}
+
+.case-card:hover .case-view-link {
+  gap: 12px;
+}
+
+/* ---------- 7. WHITE-LABEL AGENCY PARTNERSHIP ---------- */
+.whitelabel-hero-banner {
+  background: var(--dark-bg);
+  border: 1px solid var(--dark-border);
+  border-radius: 24px;
+  padding: 56px 48px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 30px 80px -15px rgba(0, 0, 0, 0.5);
+}
+
+.whitelabel-hero-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(0, 143, 140, 0.18) 0%, transparent 65%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.whitelabel-hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 980px) {
+  .whitelabel-hero-banner {
+    padding: 36px 24px;
+  }
+  .whitelabel-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+.whitelabel-hero-grid h2 {
+  font-size: clamp(26px, 3.4vw, 40px);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.18;
+  margin: 16px 0 18px;
+}
+
+.whitelabel-lead {
+  font-size: 16px;
+  color: #94A3B8;
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+
+.agency-workflow-card {
+  background: rgba(14, 28, 51, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 24px;
+  backdrop-filter: blur(8px);
+}
+
+.workflow-header {
   font-size: 12px;
   font-weight: 800;
-  letter-spacing: 1.2px;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
+  color: var(--teal-2);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.home-enquiry-heading .eyebrow::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #00a39d;
-  box-shadow: 0 0 10px rgba(0, 163, 157, 0.35);
+.workflow-chain {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.home-enquiry-heading h2 {
-  margin: 20px 0 12px;
-  color: #14243b;
-  font-size: clamp(30px, 3.2vw, 43px);
-  font-weight: 800;
-  line-height: 1.2;
-  letter-spacing: -1.1px;
+.chain-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
 }
 
-.home-enquiry-heading .grad-text {
-  background: linear-gradient(100deg, #009e9a, #29ae9b, #9cae53);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.chain-item.zooye-highlight {
+  background: rgba(0, 143, 140, 0.15);
+  border-color: rgba(0, 143, 140, 0.4);
 }
 
-.home-enquiry-heading p {
-  max-width: 760px;
-  margin: 0 auto;
-  color: #64748b;
-  font-size: 16px;
-  line-height: 1.8;
+.chain-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-/* Main two-column layout */
-
-.home-enquiry-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.25fr);
-  align-items: start;
-  gap: 48px;
+.chain-left svg {
+  width: 18px;
+  height: 18px;
+  color: var(--teal-2);
 }
 
-/* Left information panel */
-
-.home-enquiry-aside {
-  min-width: 0;
-  padding: 28px 0 0;
+.chain-left b {
+  color: #FFFFFF;
+  font-size: 13.5px;
 }
 
-.home-enquiry-aside-mark {
-  position: relative;
-  width: 198px;
-  height: 104px;
-  margin-bottom: 30px;
-  overflow: hidden;
-  border: 1px solid rgba(0, 158, 154, 0.20);
-  border-radius: 20px;
-  background-color: rgba(255, 255, 255, 0.68);
-  background-image:
-    linear-gradient(45deg, rgba(0, 158, 154, 0.09) 1px, transparent 1px),
-    linear-gradient(-45deg, rgba(0, 158, 154, 0.09) 1px, transparent 1px);
-  background-size: 16px 16px;
+.chain-left span {
+  color: #94A3B8;
+  font-size: 12px;
+  display: block;
 }
 
-.home-enquiry-aside-mark .enquiry-node {
-  position: absolute;
-  z-index: 2;
+.chain-arrow {
+  text-align: center;
+  color: var(--teal-2);
+  opacity: 0.7;
+}
+
+.chain-arrow svg {
   width: 16px;
   height: 16px;
-  border: 3px solid #e2f7f5;
-  border-radius: 50%;
-  background: #079f9b;
-  box-shadow: 0 0 0 3px rgba(0, 158, 154, 0.09);
 }
 
-.home-enquiry-aside-mark .node-one {
-  top: 18px;
-  left: 26px;
-}
-
-.home-enquiry-aside-mark .node-two {
-  bottom: 20px;
-  left: 89px;
-}
-
-.home-enquiry-aside-mark .node-three {
-  top: 18px;
-  right: 25px;
-  background: #f1bd36;
-}
-
-.home-enquiry-aside-mark .enquiry-connector {
-  position: absolute;
-  z-index: 1;
-  height: 1px;
-  background: rgba(0, 158, 154, 0.7);
-  transform-origin: left center;
-}
-
-.home-enquiry-aside-mark .connector-one {
-  top: 30px;
-  left: 39px;
-  width: 75px;
-  transform: rotate(31deg);
-}
-
-.home-enquiry-aside-mark .connector-two {
-  top: 70px;
-  left: 101px;
-  width: 73px;
-  transform: rotate(-31deg);
-}
-
-.home-enquiry-aside h3 {
-  max-width: 520px;
-  margin: 0 0 15px;
-  color: #14243b;
-  font-size: clamp(27px, 2.5vw, 35px);
-  font-weight: 800;
-  line-height: 1.28;
-  letter-spacing: -0.8px;
-}
-
-.home-enquiry-aside > p {
-  margin: 0 0 22px;
-  color: #64748b;
-  font-size: 16px;
-  line-height: 1.8;
-}
-
-.home-enquiry-contact-links {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-  margin-top: 28px;
-}
-
-.home-enquiry-contact-links a {
-  color: #14243b;
-  font-size: 16px;
-  font-weight: 750;
-  text-decoration: none;
-  overflow-wrap: anywhere;
-  transition: color 0.2s ease;
-}
-
-.home-enquiry-contact-links a:hover {
-  color: #009e9a;
-}
-
-.home-enquiry-aside .home-enquiry-note {
-  margin-top: 28px;
-  padding-top: 22px;
-  border-top: 1px solid rgba(100, 116, 139, 0.18);
-  font-size: 14px;
-}
-
-.home-enquiry-note a {
-  color: #009e9a;
-  font-weight: 750;
-  text-decoration: none;
-}
-
-/* Form card */
-
-.home-enquiry-form-card {
+/* ---------- 8. TECHNOLOGY ECOSYSTEM ARCHITECTURE ---------- */
+.tech-ecosystem-section {
+  padding: 88px 0;
   position: relative;
-  min-width: 0;
-  padding: 36px 38px;
-  border: 1px solid #dce5ef;
-  border-radius: 20px;
-  background: #fff !important;
-  box-shadow: 0 16px 45px rgba(20, 36, 59, 0.07);
 }
 
-.home-enquiry-form-card::before {
-  content: "";
-  position: absolute;
-  top: -1px;
-  right: 0;
-  left: 0;
-  height: 4px;
-  border-radius: 20px 20px 0 0;
-  background: linear-gradient(90deg, #009e9a, #42b69a, #efc33c);
-}
-
-.project-enquiry-form {
+.eco-stack {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 16px;
+  margin-top: 48px;
 }
 
-.project-enquiry-form .form-row {
+.eco-layer {
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 22px 28px;
+  box-shadow: var(--shadow-sm);
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: 240px 1fr;
+  gap: 24px;
+  align-items: center;
+  transition: all 0.22s ease;
 }
 
-.project-enquiry-form .form-field {
-  min-width: 0;
+@media (max-width: 860px) {
+  .eco-layer {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 20px;
+  }
 }
 
-.project-enquiry-form .form-field > label {
-  display: block;
-  margin-bottom: 10px;
-  color: #14243b;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.45;
+.eco-layer:hover {
+  border-color: rgba(0, 143, 140, 0.4);
+  transform: translateX(4px);
+  box-shadow: 0 10px 25px -5px rgba(11, 25, 48, 0.06);
 }
 
-.project-enquiry-form input:not([type="checkbox"]),
-.project-enquiry-form select,
-.project-enquiry-form textarea {
-  display: block;
-  width: 100%;
-  min-width: 0;
-  min-height: 52px;
-  padding: 13px 16px;
-  border: 1px solid #d9e3ee;
-  border-radius: 12px;
-  outline: none;
-  background-color: #fff;
-  color: #14243b;
-  font-family: inherit;
+.eco-layer-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.eco-layer-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(0, 143, 140, 0.08);
+  border: 1px solid rgba(0, 143, 140, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal);
+  flex-shrink: 0;
+}
+
+.eco-layer-info h4 {
   font-size: 15px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+
+.eco-layer-info span {
+  font-size: 11.5px;
+  color: var(--muted);
+}
+
+.eco-tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.eco-pill {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--navy);
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  padding: 6px 14px;
+  border-radius: 8px;
+  transition: all 0.18s ease;
+}
+
+.eco-pill:hover {
+  background: rgba(0, 143, 140, 0.08);
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.eco-connector-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal);
+  opacity: 0.6;
+}
+
+/* ---------- 9. SEVEN-STEP EXECUTION PROCESS TIMELINE ---------- */
+.process-timeline-horizontal {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 16px;
+  margin-top: 56px;
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .process-timeline-horizontal {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 680px) {
+  .process-timeline-horizontal {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.proc-step-card {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px 18px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.proc-step-card:hover {
+  border-color: var(--teal);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px -6px rgba(11, 25, 48, 0.08);
+}
+
+.proc-step-num {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--teal);
+  background: rgba(0, 143, 140, 0.08);
+  border: 1px solid rgba(0, 143, 140, 0.18);
+  padding: 3px 10px;
+  border-radius: 999px;
+  display: inline-block;
+  margin-bottom: 14px;
+  width: max-content;
+}
+
+.proc-step-card h4 {
+  font-size: 15.5px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.proc-step-card p {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ---------- 10. HONEST CLIENT STANDARDS & ENGINEERING PRINCIPLES ---------- */
+.standards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+@media (max-width: 900px) {
+  .standards-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+.standard-card {
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+}
+
+.standard-card:hover {
+  border-color: rgba(0, 143, 140, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px -6px rgba(11, 25, 48, 0.08);
+}
+
+.standard-card-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(0, 143, 140, 0.08);
+  border: 1px solid rgba(0, 143, 140, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal);
+  margin-bottom: 18px;
+}
+
+.standard-card h3 {
+  font-size: 17.5px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.standard-card p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---------- 11. ENHANCED FAQ ACCORDION ---------- */
+.faq-enhanced-container {
+  max-width: 860px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item-enhanced {
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.project-enquiry-form input::placeholder,
-.project-enquiry-form textarea::placeholder {
-  color: #8794a6;
+.faq-item-enhanced.open {
+  border-color: rgba(0, 143, 140, 0.45);
+  box-shadow: 0 8px 24px -4px rgba(11, 25, 48, 0.06);
 }
 
-.project-enquiry-form input:focus,
-.project-enquiry-form select:focus,
-.project-enquiry-form textarea:focus {
-  border-color: #009e9a;
-  box-shadow: 0 0 0 3px rgba(0, 158, 154, 0.10);
+.faq-trigger-enhanced {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  background: none;
+  border: none;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  text-align: left;
+  cursor: pointer;
+  gap: 16px;
+  transition: color 0.18s ease;
 }
 
-.project-enquiry-form textarea {
-  min-height: 145px;
-  resize: vertical;
+.faq-trigger-enhanced:hover {
+  color: var(--teal);
+}
+
+.faq-glyph-enhanced {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--navy);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-item-enhanced.open .faq-glyph-enhanced {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #FFFFFF;
+  transform: rotate(45deg);
+}
+
+.faq-panel-enhanced {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-item-enhanced.open .faq-panel-enhanced {
+  grid-template-rows: 1fr;
+}
+
+.faq-panel-inner {
+  overflow: hidden;
+}
+
+.faq-panel-inner p {
+  padding: 0 24px 22px;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--ink-light);
+  margin: 0;
+}
+
+/* ---------- 12. ENHANCED FOOTER SYSTEM ---------- */
+.footer-v2 {
+  background: var(--navy);
+  color: #94A3B8;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 72px 0 28px;
+  position: relative;
+}
+
+.footer-v2-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr 1.4fr;
+  gap: 40px;
+  margin-bottom: 56px;
+}
+
+@media (max-width: 1024px) {
+  .footer-v2-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-v2-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.footer-col h4 {
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: 18px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-col ul a {
+  color: #94A3B8;
+  font-size: 13.5px;
+  transition: color 0.18s ease;
+}
+
+.footer-col ul a:hover {
+  color: var(--teal-2);
+}
+
+.footer-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 13px;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-bottom-links a {
+  color: #94A3B8;
+}
+
+.footer-bottom-links a:hover {
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   PORTFOLIO & CASE STUDY PAGE SYSTEM
+   ========================================================================== */
+.subhero {
+  padding: 80px 0 40px;
+  background: var(--bg-soft);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+
+.subhero h1 {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  margin: 14px 0 16px;
+  line-height: 1.15;
+}
+
+.sub-lead {
+  font-size: 16px;
+  color: var(--muted);
+  max-width: 640px;
   line-height: 1.65;
 }
 
-.project-enquiry-form .form-consent .consent-label {
+.filter-bar {
   display: flex;
-  align-items: flex-start;
+  flex-wrap: wrap;
   gap: 10px;
-  color: #64748b;
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 1.7;
+  margin-bottom: 40px;
+  justify-content: flex-start;
 }
 
-.project-enquiry-form .consent-label input[type="checkbox"] {
-  flex: 0 0 auto;
+.filter-btn {
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  color: var(--navy);
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.filter-btn.active {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(0, 143, 140, 0.25);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-bottom: 80px;
+}
+
+@media (max-width: 860px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.project-card {
+  background: #FFFFFF;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  border-color: rgba(0, 143, 140, 0.45);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 45px -10px rgba(11, 25, 48, 0.12);
+}
+
+.project-preview {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #0B1930;
+  overflow: hidden;
+}
+
+.project-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-preview img {
+  transform: scale(1.04);
+}
+
+.project-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  background: rgba(11, 25, 48, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+
+.project-details {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.project-meta {
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.project-details h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.project-details p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.project-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--teal);
+  transition: gap 0.2s ease;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  margin-top: auto;
+}
+
+.project-card:hover .project-cta-link {
+  gap: 12px;
+}
+
+
+
+
+
+
+
+/* ==========================================================================
+   STEP 2 — CONTACT FORM, ZOOYE BRAND CONSISTENCY & CROSS-GRID POLISH
+   ========================================================================== */
+
+/* Keep the cross-grid subtle and consistent on light/dark surfaces. */
+.tech-grid-diagonal {
+  background-image:
+    repeating-linear-gradient(45deg, rgba(0, 143, 140, 0.035) 0 1px, transparent 1px 32px),
+    repeating-linear-gradient(-45deg, rgba(11, 25, 48, 0.03) 0 1px, transparent 1px 32px);
+  background-size: 44px 44px;
+}
+
+.tech-grid-dark.tech-grid-diagonal {
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 32px),
+    repeating-linear-gradient(-45deg, rgba(18, 166, 160, 0.05) 0 1px, transparent 1px 32px);
+}
+
+/* Consistent form controls */
+.project-enquiry-form .form-field input,
+.project-enquiry-form .form-field select,
+.project-enquiry-form .form-field textarea {
+  min-height: 48px;
+  border-color: #D7E1E8;
+  border-radius: 10px;
+}
+
+.project-enquiry-form .form-field textarea {
+  min-height: 140px;
+}
+
+.project-enquiry-form .form-field input:hover,
+.project-enquiry-form .form-field select:hover,
+.project-enquiry-form .form-field textarea:hover {
+  border-color: rgba(0, 143, 140, 0.55);
+}
+
+.project-enquiry-form .form-field input:focus-visible,
+.project-enquiry-form .form-field select:focus-visible,
+.project-enquiry-form .form-field textarea:focus-visible,
+.project-enquiry-form .consent-label input:focus-visible,
+.project-enquiry-form .form-submit:focus-visible {
+  outline: 3px solid rgba(18, 166, 160, 0.28);
+  outline-offset: 2px;
+}
+
+.project-enquiry-form .form-consent {
+  margin: 2px 0 20px;
+}
+
+.project-enquiry-form .consent-label {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  align-items: start;
+  gap: 10px;
+  color: var(--muted);
+  font: 400 13px/1.6 'Inter', sans-serif;
+  cursor: pointer;
+}
+
+.project-enquiry-form .consent-label input {
   width: 16px;
   height: 16px;
-  margin-top: 4px;
-  accent-color: #009e9a;
+  margin: 3px 0 0;
+  accent-color: var(--teal);
 }
 
 .project-enquiry-form .consent-label a {
-  color: #008e89;
-  font-weight: 650;
+  color: var(--teal);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .project-enquiry-form .form-submit {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
   width: 100%;
-  min-height: 54px;
-  padding: 14px 22px;
-  border: 0;
-  border-radius: 12px;
-  background: #009e9a;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 750;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
+  justify-content: center;
+  gap: 10px;
 }
 
-.project-enquiry-form .form-submit:hover {
-  transform: translateY(-1px);
-  background: #008783;
+.project-enquiry-form .form-note {
+  margin-top: 14px;
+  line-height: 1.65;
 }
 
-.project-enquiry-form .form-submit svg {
-  width: 19px;
-  height: 19px;
-  flex: 0 0 auto;
-}
-
-.project-enquiry-form .form-note,
 .project-enquiry-form .form-status {
-  margin: 0;
-  color: #64748b;
-  font-size: 12px;
-  line-height: 1.7;
-}
-
-/* Tablet */
-
-@media (max-width: 900px) {
-  .home-enquiry-section {
-    padding: 58px 0 68px;
-  }
-
-  .home-enquiry-grid {
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-    gap: 28px;
-  }
-
-  .home-enquiry-form-card {
-    padding: 28px 24px;
-  }
-
-  .project-enquiry-form .form-row {
-    gap: 14px;
-  }
-}
-
-/* Mobile */
-
-@media (max-width: 680px) {
-  .home-enquiry-section {
-    padding: 42px 0 52px;
-  }
-
-  .home-enquiry-section .wrap {
-    width: calc(100% - 32px);
-  }
-
-  .home-enquiry-heading {
-    margin-bottom: 28px;
-    text-align: left;
-  }
-
-  .home-enquiry-heading h2 {
-    margin-top: 16px;
-    font-size: 30px;
-    letter-spacing: -0.7px;
-  }
-
-  .home-enquiry-heading p {
-    font-size: 15px;
-    line-height: 1.7;
-  }
-
-  .home-enquiry-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 28px;
-  }
-
-  .home-enquiry-aside {
-    padding-top: 0;
-  }
-
-  .home-enquiry-aside-mark {
-    width: 170px;
-    height: 90px;
-    margin-bottom: 22px;
-  }
-
-  .home-enquiry-aside h3 {
-    font-size: 28px;
-  }
-
-  .home-enquiry-aside > p {
-    font-size: 15px;
-  }
-
-  .home-enquiry-form-card {
-    padding: 28px 18px;
-    border-radius: 16px;
-  }
-
-  .project-enquiry-form {
-    gap: 19px;
-  }
-
-  .project-enquiry-form .form-row {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 19px;
-  }
-
-  .project-enquiry-form input:not([type="checkbox"]),
-  .project-enquiry-form select {
-    min-height: 49px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .home-enquiry-section *,
-  .home-enquiry-section *::before,
-  .home-enquiry-section *::after {
-    transition: none !important;
-  }
-}
-
-/* ==========================================================
-   ZOOYE HERO / ARCHITECTURE VISIBILITY FIX
-   Append-safe overrides for the dark engineering section.
-   ========================================================== */
-.signature-dark-section {
-  position: relative !important;
-  isolation: isolate;
-  overflow: hidden;
-  background: #071120 !important;
-  color: #f8fafc !important;
-}
-.signature-dark-section .dark-grid {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, .95fr);
-  align-items: center;
-  gap: clamp(28px, 4vw, 56px);
-}
-.signature-dark-section .dark-content,
-.signature-dark-section .dark-content h2,
-.signature-dark-section .dark-feature-item h4 {
-  color: #f8fafc !important;
-}
-.signature-dark-section .dark-lead,
-.signature-dark-section .dark-feature-item p {
-  color: #a9b8cb !important;
-}
-.signature-dark-section .eyebrow-dark {
-  color: #42d3ca !important;
-  background: rgba(14, 165, 160, .12);
-  border-color: rgba(45, 212, 191, .28);
-}
-.signature-dark-section .zooye-architecture {
-  display: block !important;
-  position: relative;
-  width: 100%;
-  min-width: 0;
-  padding: 24px 0 !important;
-  overflow: visible !important;
-  color: #f8fafc !important;
-  --pipeline-bg: #101e30;
-  --pipeline-card: #17283c;
-  --pipeline-teal: #35d2c8;
-  --pipeline-muted: #b6c4d6;
-  --pipeline-border: #344a62;
-}
-.signature-dark-section .architecture-panel {
-  display: block !important;
-  position: relative;
-  width: 100%;
-  max-width: 100% !important;
-  margin: 0 auto;
-  padding: clamp(18px, 2.2vw, 30px) !important;
-  color: #f8fafc !important;
-  background: linear-gradient(145deg, #13243a, #0c1828) !important;
-  border: 1px solid rgba(120, 153, 190, .32) !important;
-  border-radius: 22px !important;
-  box-shadow: 0 22px 65px rgba(0,0,0,.28), inset 0 1px rgba(255,255,255,.035);
-}
-.signature-dark-section .architecture-header,
-.signature-dark-section .architecture-heading,
-.signature-dark-section .pipeline-flow,
-.signature-dark-section .pipeline-step,
-.signature-dark-section .step-content {
-  min-width: 0;
-}
-.signature-dark-section .architecture-heading,
-.signature-dark-section .step-content h3 {
-  color: #f8fafc !important;
-}
-.signature-dark-section .architecture-heading span,
-.signature-dark-section .step-content p {
-  color: #b6c4d6 !important;
-}
-.signature-dark-section .pipeline-step {
-  display: flex !important;
-  align-items: center;
-  gap: 12px;
-  padding: 13px !important;
-  background: #17283c !important;
-  border: 1px solid #344a62 !important;
-  border-radius: 14px !important;
-}
-.signature-dark-section .pipeline-step.active,
-.signature-dark-section .pipeline-step.revenue-step {
-  background: rgba(14, 165, 160, .13) !important;
-  border-color: rgba(53, 210, 200, .5) !important;
-}
-.signature-dark-section .step-icon {
-  flex: 0 0 42px;
-  width: 42px;
-  height: 42px;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  color: #35d2c8 !important;
-  background: rgba(53, 210, 200, .1) !important;
-  border: 1px solid rgba(53, 210, 200, .28) !important;
-  border-radius: 12px !important;
-}
-.signature-dark-section .zooye-architecture svg {
-  max-width: 100%;
-  fill: none !important;
-  stroke: currentColor !important;
-}
-.signature-dark-section .step-icon svg {
-  width: 23px !important;
-  height: 23px !important;
-  color: #35d2c8 !important;
-  stroke: currentColor !important;
-  stroke-width: 1.8 !important;
-}
-.signature-dark-section .step-status {
-  color: #dbeafe !important;
-  background: #253a52 !important;
-}
-.signature-dark-section .growth-status {
-  color: #052b30 !important;
-  background: #35d2c8 !important;
-}
-.signature-dark-section .pipeline-arrow {
-  color: #35d2c8 !important;
-}
-.signature-dark-section .floating-label {
-  color: #f8fafc !important;
-  background: #14263a !important;
-  border-color: #3b526b !important;
-}
-.signature-dark-section .floating-label .shield-icon {
-  color: #f4c536 !important;
-}
-.signature-dark-section .floating-label .lightning-icon {
-  color: #35d2c8 !important;
-}
-@media (max-width: 980px) {
-  .signature-dark-section .dark-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 32px;
-  }
-  .signature-dark-section .zooye-architecture {
-    padding: 12px 0 24px !important;
-  }
-}
-@media (max-width: 600px) {
-  .signature-dark-section {
-    padding: 64px 0 !important;
-  }
-  .signature-dark-section .architecture-panel {
-    padding: 16px 12px !important;
-    border-radius: 16px !important;
-  }
-  .signature-dark-section .pipeline-step {
-    flex-wrap: wrap;
-  }
-  .signature-dark-section .step-status,
-  .signature-dark-section .growth-status {
-    margin-left: 54px;
-  }
-  .signature-dark-section .floating-label {
-    font-size: 10px !important;
-    padding: 8px 10px !important;
-  }
-}
-
-/* ==========================================================
-   ZOOYE PROJECT ENQUIRY SECTION — LAYOUT & READABILITY FIX
-   ========================================================== */
-.home-enquiry-section {
-  position: relative !important;
-  display: block !important;
-  padding: clamp(64px, 7vw, 104px) 0 !important;
-  color: #14243b !important;
-  background-color: transparent !important;
-  overflow: hidden;
-}
-.home-enquiry-section > .wrap {
-  width: min(1240px, calc(100% - 48px)) !important;
-  max-width: 1240px !important;
-  margin-inline: auto !important;
-}
-.home-enquiry-heading {
-  display: block !important;
-  max-width: 980px !important;
-  margin: 0 0 38px !important;
-  text-align: left !important;
-}
-.home-enquiry-heading .eyebrow {
-  display: inline-flex !important;
-  align-items: center;
-  gap: 9px;
-  margin: 0 0 18px !important;
-  padding: 9px 15px !important;
-  border: 1px solid rgba(0, 158, 154, .22) !important;
-  border-radius: 999px !important;
-  background: rgba(0, 158, 154, .08) !important;
-  color: #008d88 !important;
-  font-size: 12px !important;
-  font-weight: 800 !important;
-  letter-spacing: 1.3px !important;
-  text-transform: uppercase;
-}
-.home-enquiry-heading h2 {
-  max-width: 950px !important;
-  margin: 0 0 14px !important;
-  color: #14243b !important;
-  font-size: clamp(30px, 3.4vw, 46px) !important;
-  font-weight: 800 !important;
-  line-height: 1.16 !important;
-  letter-spacing: -1.2px !important;
-}
-.home-enquiry-heading .grad-text {
-  color: #009e9a !important;
-  background: linear-gradient(90deg, #009e9a, #70a66b, #e4b63f) !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-}
-.home-enquiry-heading > p {
-  max-width: 820px !important;
-  margin: 0 !important;
-  color: #64748b !important;
-  font-size: 16px !important;
-  line-height: 1.8 !important;
-}
-.home-enquiry-grid {
-  display: grid !important;
-  grid-template-columns: minmax(250px, .78fr) minmax(0, 1.22fr) !important;
-  align-items: start !important;
-  gap: clamp(28px, 4vw, 58px) !important;
-  width: 100% !important;
-}
-.home-enquiry-aside {
-  display: block !important;
-  min-width: 0 !important;
-  padding: 10px 0 0 !important;
-}
-.home-enquiry-aside-mark {
-  position: relative !important;
-  display: block !important;
-  width: 190px !important;
-  height: 90px !important;
-  margin: 0 0 26px !important;
-}
-.home-enquiry-aside .enquiry-node {
-  position: absolute !important;
-  z-index: 2;
-  display: block !important;
-  width: 14px !important;
-  height: 14px !important;
-  border: 3px solid #fff !important;
-  border-radius: 50% !important;
-  background: #009e9a !important;
-  box-shadow: 0 0 0 1px rgba(0,158,154,.25), 0 4px 12px rgba(0,158,154,.14);
-}
-.home-enquiry-aside .node-one { top: 18px !important; left: 26px !important; }
-.home-enquiry-aside .node-two { bottom: 20px !important; left: 89px !important; }
-.home-enquiry-aside .node-three { top: 18px !important; right: 25px !important; background: #e6b839 !important; }
-.home-enquiry-aside .enquiry-connector {
-  position: absolute !important;
-  z-index: 1;
-  display: block !important;
-  height: 2px !important;
-  background: rgba(0,158,154,.55) !important;
-  transform-origin: left center;
-}
-.home-enquiry-aside h3 {
-  max-width: 460px !important;
-  margin: 0 0 14px !important;
-  color: #14243b !important;
-  font-size: clamp(25px, 2.3vw, 32px) !important;
-  font-weight: 800 !important;
-  line-height: 1.25 !important;
-  letter-spacing: -.7px !important;
-}
-.home-enquiry-aside > p {
-  margin: 0 0 18px !important;
-  color: #64748b !important;
-  font-size: 15px !important;
-  line-height: 1.8 !important;
-}
-.home-enquiry-contact-links {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-  gap: 12px !important;
-  margin-top: 22px !important;
-}
-.home-enquiry-contact-links a {
-  color: #14243b !important;
-  font-size: 15px !important;
-  font-weight: 750 !important;
-  text-decoration: none !important;
+  display: none;
+  margin-top: 12px;
+  padding: 12px 14px;
+  border: 1px solid rgba(0, 143, 140, 0.24);
+  border-radius: 10px;
+  background: rgba(0, 143, 140, 0.06);
+  color: var(--navy);
+  font-size: 13px;
   overflow-wrap: anywhere;
 }
-.home-enquiry-contact-links a:hover { color: #009e9a !important; }
-.home-enquiry-aside .home-enquiry-note {
-  margin-top: 24px !important;
-  padding-top: 20px !important;
-  border-top: 1px solid rgba(100,116,139,.2) !important;
-  font-size: 14px !important;
+
+.project-enquiry-form .form-status.is-visible {
+  display: block;
 }
-.home-enquiry-note a { color: #008e89 !important; font-weight: 750 !important; text-decoration: none !important; }
-.home-enquiry-form-card {
-  display: block !important;
-  width: 100% !important;
-  min-width: 0 !important;
-  margin: 0 !important;
-  padding: clamp(24px, 3vw, 38px) !important;
-  border: 1px solid #dce5ef !important;
-  border-radius: 20px !important;
-  background: #fff !important;
-  box-shadow: 0 16px 45px rgba(20,36,59,.07) !important;
+
+.project-enquiry-form .form-status.is-error {
+  border-color: rgba(239, 107, 85, 0.35);
+  background: rgba(239, 107, 85, 0.07);
 }
-.project-enquiry-form {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 22px !important;
-  width: 100% !important;
+
+.contact-form-card {
+  position: relative;
+  overflow: hidden;
 }
-.project-enquiry-form .form-row {
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 18px !important;
-  width: 100% !important;
+
+.contact-form-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--teal), var(--turquoise), var(--gold));
+  pointer-events: none;
 }
-.project-enquiry-form .form-field { display: block !important; min-width: 0 !important; }
-.project-enquiry-form .form-field > label {
-  display: block !important;
-  margin: 0 0 9px !important;
-  color: #14243b !important;
-  font-size: 14px !important;
-  font-weight: 700 !important;
-  line-height: 1.45 !important;
-}
-.project-enquiry-form input:not([type="checkbox"]),
-.project-enquiry-form select,
-.project-enquiry-form textarea {
-  display: block !important;
-  box-sizing: border-box !important;
-  width: 100% !important;
-  min-width: 0 !important;
-  min-height: 48px !important;
-  padding: 12px 15px !important;
-  border: 1px solid #d9e3ee !important;
-  border-radius: 11px !important;
-  background: #fff !important;
-  color: #14243b !important;
-  font: inherit !important;
-  font-size: 15px !important;
-}
-.project-enquiry-form textarea { min-height: 140px !important; resize: vertical !important; line-height: 1.65 !important; }
-.project-enquiry-form input:focus,
-.project-enquiry-form select:focus,
-.project-enquiry-form textarea:focus {
-  outline: none !important;
-  border-color: #009e9a !important;
-  box-shadow: 0 0 0 3px rgba(0,158,154,.1) !important;
-}
-@media (max-width: 900px) {
-  .home-enquiry-grid { grid-template-columns: minmax(0, 1fr) !important; gap: 32px !important; }
-  .home-enquiry-aside { max-width: 720px !important; }
-}
-@media (max-width: 600px) {
-  .home-enquiry-section { padding: 48px 0 58px !important; }
-  .home-enquiry-section > .wrap { width: calc(100% - 32px) !important; }
-  .home-enquiry-heading { margin-bottom: 28px !important; }
-  .home-enquiry-heading h2 { font-size: clamp(28px, 8vw, 34px) !important; letter-spacing: -.8px !important; }
-  .home-enquiry-heading > p { font-size: 15px !important; }
-  .home-enquiry-form-card { padding: 22px 16px !important; border-radius: 16px !important; }
-  .project-enquiry-form { gap: 18px !important; }
-  .project-enquiry-form .form-row { grid-template-columns: minmax(0, 1fr) !important; gap: 18px !important; }
+
+@media (max-width: 540px) {
+  .contact-form-card {
+    padding: 28px 20px;
+  }
+
+  .project-enquiry-form .form-submit {
+    min-height: 48px;
+  }
 }
 
 
-/* ============================================================
-   ZESTCODE-INSPIRED GLOBAL CROSS-GRID BACKGROUND
-   Added after existing styles so it takes priority.
-   ============================================================ */
-/* ==========================================================
-   ZOOYE GLOBAL CROSS-GRID BACKGROUND
-   Zestcode-inspired diagonal grid across light page sections.
-   Append after all existing CSS to override older grid rules.
-========================================================== */
-
-:root {
-  --zooye-grid-light: rgba(105, 86, 190, 0.105);
-  --zooye-grid-dark: rgba(202, 213, 255, 0.075);
-}
-
-/* Site-wide base grid: two diagonal directions create diamonds */
-html {
-  background-color: #ffffff;
-}
-
-body {
-  background-color: #ffffff !important;
-  background-image:
-    repeating-linear-gradient(
-      45deg,
-      transparent 0,
-      transparent 59px,
-      var(--zooye-grid-light) 59px,
-      var(--zooye-grid-light) 60px,
-      transparent 60px,
-      transparent 120px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      transparent 0,
-      transparent 59px,
-      var(--zooye-grid-light) 59px,
-      var(--zooye-grid-light) 60px,
-      transparent 60px,
-      transparent 120px
-    ) !important;
-  background-attachment: fixed;
+/* Shared 45-degree cross-grid used across Zooye pages */
+.cross-grid-light,
+.cross-grid-dark {
+  background-repeat: repeat;
+  background-size: 44px 44px;
   background-position: center top;
 }
 
-/* Let the global grid show through all regular/light sections.
-   Cards, form fields, header and navigation keep their own surfaces. */
-section:not(.signature-dark-section):not(.final-cta):not(.cta) {
-  background-color: transparent !important;
-  background-image: none !important;
-}
-
-/* Some page bands are divs rather than sections; let the grid show through */
-.trust-strip,
-.subhero {
-  background-color: transparent !important;
-  background-image: none !important;
-}
-
-/* Hero: retain a soft teal/gold atmosphere while letting the grid show */
-.hero {
-  background-color: transparent !important;
+.cross-grid-light {
   background-image:
-    radial-gradient(
-      circle at 80% 20%,
-      rgba(18, 166, 160, 0.075) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 10% 70%,
-      rgba(245, 197, 66, 0.055) 0%,
-      transparent 45%
-    ) !important;
+    repeating-linear-gradient(45deg, rgba(11, 25, 48, 0.035) 0 1px, transparent 1px 31px),
+    repeating-linear-gradient(-45deg, rgba(0, 143, 140, 0.035) 0 1px, transparent 1px 31px);
 }
 
-/* Dark feature sections: subtle cross-grid in a lighter line color */
-.signature-dark-section {
-  background-color: var(--dark-bg) !important;
+.cross-grid-dark {
   background-image:
-    repeating-linear-gradient(
-      45deg,
-      transparent 0,
-      transparent 69px,
-      var(--zooye-grid-dark) 69px,
-      var(--zooye-grid-dark) 70px,
-      transparent 70px,
-      transparent 140px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      transparent 0,
-      transparent 69px,
-      var(--zooye-grid-dark) 69px,
-      var(--zooye-grid-dark) 70px,
-      transparent 70px,
-      transparent 140px
-    ) !important;
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 31px),
+    repeating-linear-gradient(-45deg, rgba(18, 166, 160, 0.045) 0 1px, transparent 1px 31px);
 }
 
-/* Dark CTA sections keep their navy color with a subtle grid */
-.final-cta,
-.cta,
-.infbar {
-  background-color: var(--navy) !important;
-  background-image:
-    repeating-linear-gradient(
-      45deg,
-      transparent 0,
-      transparent 69px,
-      rgba(255, 255, 255, 0.045) 69px,
-      rgba(255, 255, 255, 0.045) 70px,
-      transparent 70px,
-      transparent 140px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      transparent 0,
-      transparent 69px,
-      rgba(255, 255, 255, 0.045) 69px,
-      rgba(255, 255, 255, 0.045) 70px,
-      transparent 70px,
-      transparent 140px
-    ) !important;
-}
 
-/* Keep inset cards and form surfaces clean and readable */
-.editorial-card,
-.modern-scard,
-.project-card,
-.faq-card,
-.faq-item,
-.contact-form-card,
-.contact-info-card,
-.home-enquiry-form-card,
-.trust-pillar-card,
-.testimonial-card,
-form {
-  background-color: #ffffff;
-}
-
-/* Enquiry section uses the same global grid instead of a separate pattern */
+/* Homepage project enquiry section */
 .home-enquiry-section {
-  background-color: transparent !important;
-  background-image: none !important;
+  padding: 96px 0;
+  background-color: var(--bg-soft);
 }
 
-/* Mobile performance and pattern consistency */
-@media (max-width: 768px) {
-  body {
-    background-attachment: scroll;
+.home-enquiry-heading {
+  max-width: 800px;
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+.home-enquiry-heading h2 {
+  margin-top: 16px;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.15;
+}
+
+.home-enquiry-heading p {
+  max-width: 660px;
+  margin: 18px auto 0;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.home-enquiry-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.home-enquiry-aside {
+  position: relative;
+  padding: 32px 8px 24px 0;
+}
+
+.home-enquiry-aside h3 {
+  margin: 28px 0 12px;
+  font-size: clamp(23px, 2.4vw, 30px);
+  line-height: 1.25;
+}
+
+.home-enquiry-aside > p {
+  max-width: 430px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.home-enquiry-aside-mark {
+  position: relative;
+  width: 180px;
+  height: 92px;
+  border: 1px solid rgba(0, 143, 140, 0.2);
+  border-radius: 16px;
+  background:
+    repeating-linear-gradient(45deg, rgba(0, 143, 140, 0.06) 0 1px, transparent 1px 14px),
+    repeating-linear-gradient(-45deg, rgba(11, 25, 48, 0.045) 0 1px, transparent 1px 14px),
+    #FFFFFF;
+  overflow: hidden;
+}
+
+.enquiry-node {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--teal);
+  box-shadow: 0 0 0 5px rgba(0, 143, 140, 0.1);
+}
+
+.node-one { top: 18px; left: 25px; }
+.node-two { top: 55px; left: 83px; background: var(--turquoise); }
+.node-three { top: 18px; right: 24px; background: var(--gold); }
+
+.enquiry-connector {
+  position: absolute;
+  height: 1px;
+  background: rgba(0, 143, 140, 0.65);
+  transform-origin: left center;
+}
+.connector-one { width: 70px; top: 29px; left: 36px; transform: rotate(31deg); }
+.connector-two { width: 68px; top: 62px; left: 96px; transform: rotate(-31deg); }
+
+.home-enquiry-contact-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 26px 0;
+}
+
+.home-enquiry-contact-links a {
+  color: var(--navy);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.home-enquiry-contact-links a:hover,
+.home-enquiry-note a {
+  color: var(--teal);
+}
+
+.home-enquiry-note {
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-size: 13px !important;
+}
+
+.home-enquiry-note a {
+  display: inline-block;
+  margin-top: 6px;
+  font-weight: 700;
+}
+
+.home-enquiry-form-card {
+  padding: 36px;
+}
+
+@media (max-width: 900px) {
+  .home-enquiry-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .home-enquiry-aside {
+    padding: 0 0 10px;
+  }
+
+  .home-enquiry-aside > p {
+    max-width: 680px;
   }
 }
 
-/* ============================================================
-   FINAL OVERRIDE — ZESTCODE-STYLE GRID THROUGHOUT THE WEBSITE
-   Ensures both light and dark sections show the same subtle
-   diagonal cross-grid without changing cards or form fields.
-   ============================================================ */
+@media (max-width: 540px) {
+  .home-enquiry-section {
+    padding: 64px 0;
+  }
+
+  .home-enquiry-heading {
+    text-align: left;
+    margin-bottom: 28px;
+  }
+
+  .home-enquiry-heading p {
+    margin-left: 0;
+    font-size: 15px;
+  }
+
+  .home-enquiry-form-card {
+    padding: 28px 20px;
+  }
+}
+
+/* =====================================================================
+   ZOOYE GLOBAL BACKGROUND GRID — REFINED ZESTCODE-INSPIRED OVERRIDES
+   Added to the supplied stylesheet. Keeps existing layout and branding.
+   ===================================================================== */
 :root {
-  --zooye-cross-grid-light: rgba(118, 128, 151, 0.10);
-  --zooye-cross-grid-dark: rgba(191, 205, 232, 0.075);
-  --zooye-cross-grid-size: 120px;
+  --zooye-grid-light: rgba(100, 100, 150, 0.035);
+  --zooye-grid-dark: rgba(200, 215, 240, 0.045);
 }
 
-html,
+/* Global default: faint diagonal cross-grid */
 body {
-  min-height: 100%;
-  background-color: #fff !important;
-}
-
-body {
-  background-image:
-    repeating-linear-gradient(45deg, transparent 0, transparent 59px, var(--zooye-cross-grid-light) 59px, var(--zooye-cross-grid-light) 60px, transparent 60px, transparent 120px),
-    repeating-linear-gradient(-45deg, transparent 0, transparent 59px, var(--zooye-cross-grid-light) 59px, var(--zooye-cross-grid-light) 60px, transparent 60px, transparent 120px) !important;
-  background-size: 120px 120px !important;
-  background-position: 0 0 !important;
-  background-attachment: fixed;
-}
-
-/* Keep page wrappers transparent so the body grid can show through. */
-main,
-.site-main,
-.page-content,
-.page-wrapper,
-main > .wrap,
-main > .container,
-main > .content-wrap {
-  background-color: transparent !important;
-  background-image: none !important;
-}
-
-/* All standard/light content sections share the subtle white grid. */
-section:not(.signature-dark-section):not(.final-cta):not(.cta):not(.infbar):not(.wl-section):not(.cta-card):not(.dark-section),
-.why-zooye-section,
-.services-section,
-.whitelabel-section,
-.portfolio-section,
-.process-section,
-.quality-section,
-.faq-section,
-.subhero,
-.trust-strip,
-.home-enquiry-section {
-  background-color: rgba(255, 255, 255, 0.08) !important;
-  background-image:
-    repeating-linear-gradient(45deg, transparent 0, transparent 59px, var(--zooye-cross-grid-light) 59px, var(--zooye-cross-grid-light) 60px, transparent 60px, transparent 120px),
-    repeating-linear-gradient(-45deg, transparent 0, transparent 59px, var(--zooye-cross-grid-light) 59px, var(--zooye-cross-grid-light) 60px, transparent 60px, transparent 120px) !important;
-  background-size: 120px 120px !important;
-  background-position: 0 0 !important;
-}
-
-/* Dark sections use the same pattern, with lower-contrast pale lines. */
-.signature-dark-section,
-.final-cta,
-.cta,
-.infbar,
-.wl-section,
-.cta-card,
-.dark-section {
-  background-color: #081426 !important;
-  background-image:
-    repeating-linear-gradient(45deg, transparent 0, transparent 59px, var(--zooye-cross-grid-dark) 59px, var(--zooye-cross-grid-dark) 60px, transparent 60px, transparent 120px),
-    repeating-linear-gradient(-45deg, transparent 0, transparent 59px, var(--zooye-cross-grid-dark) 59px, var(--zooye-cross-grid-dark) 60px, transparent 60px, transparent 120px) !important;
-  background-size: 120px 120px !important;
-  background-position: 0 0 !important;
-}
-
-/* Keep content cards and controls clean, with their own readable surfaces. */
-.editorial-card,
-.modern-scard,
-.project-card,
-.faq-card,
-.faq-item,
-.contact-form-card,
-.contact-info-card,
-.home-enquiry-form-card,
-.trust-pillar-card,
-.testimonial-card,
-.project-enquiry-form,
-.project-enquiry-form input,
-.project-enquiry-form select,
-.project-enquiry-form textarea,
-input,
-select,
-textarea {
-  background-color: #fff;
-}
-
-@media (max-width: 768px) {
-  body { background-attachment: scroll; }
-}
-
-
-/* ============================================================
-   FINAL FIX — ONE SUBTLE GLOBAL GRID FOR LIGHT + DARK SECTIONS
-   This override removes the duplicate, dense grid from the
-   enquiry section and other light sections, letting one global
-   background show through instead.
-============================================================ */
-:root {
-  --zooye-final-grid-light: rgba(105, 112, 145, 0.035);
-  --zooye-final-grid-dark: rgba(190, 204, 230, 0.045);
-}
-
-html,
-body {
-  background-color: #ffffff !important;
-}
-
-body {
-  background-image:
-    repeating-linear-gradient(
-      45deg,
-      transparent 0,
-      transparent 59px,
-      var(--zooye-final-grid-light) 59.5px,
-      transparent 60px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      transparent 0,
-      transparent 59px,
-      var(--zooye-final-grid-light) 59.5px,
-      transparent 60px
-    ) !important;
-  background-size: 120px 120px !important;
-  background-position: 0 0 !important;
-  background-attachment: fixed;
-}
-
-/* Light sections use the body grid; do not paint a second grid. */
-main,
-.site-main,
-.page-content,
-.page-wrapper,
-main > .wrap,
-main > .container,
-main > .content-wrap,
-section:not(.signature-dark-section):not(.final-cta):not(.cta):not(.infbar):not(.wl-section):not(.cta-card):not(.dark-section),
-.why-zooye-section,
-.services-section,
-.whitelabel-section,
-.portfolio-section,
-.process-section,
-.quality-section,
-.faq-section,
-.subhero,
-.trust-strip,
-.home-enquiry-section {
-  background-color: transparent !important;
-  background-image: none !important;
-}
-
-/* Keep the contact/enquiry card itself white and readable. */
-.home-enquiry-form-card,
-.contact-form-card,
-.contact-info-card,
-form,
-.project-enquiry-form,
-input,
-select,
-textarea {
   background-color: #ffffff;
-}
-
-/* LIGHT SECTIONS */
-.why-zooye-section,
-.services-section,
-.whitelabel-section,
-.portfolio-section,
-.process-section,
-.quality-section,
-.faq-section,
-.trust-strip,
-.home-enquiry-section {
-  background-image: none !important;
-  background-color: transparent !important;
-}
-
-/* HERO — retain soft teal and gold glow with subtle grid */
-.hero {
-  background-color: #ffffff !important;
   background-image:
-    radial-gradient(
-      circle at 80% 20%,
-      rgba(18, 166, 160, 0.07),
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 10% 70%,
-      rgba(245, 197, 66, 0.05),
-      transparent 45%
-    ),
     repeating-linear-gradient(
       45deg,
       transparent 0,
       transparent 59px,
-      rgba(100, 100, 150, 0.035) 59.5px,
+      var(--zooye-grid-light) 59.5px,
       transparent 60px
     ),
     repeating-linear-gradient(
       -45deg,
       transparent 0,
       transparent 59px,
-      rgba(100, 100, 150, 0.035) 59.5px,
-      transparent 60px
-    ) !important;
-  background-size: auto, auto, 120px 120px, 120px 120px;
-}
-
-/* DARK SECTIONS */
-.signature-dark-section,
-.final-cta,
-.cta,
-.infbar,
-.wl-section,
-.cta-card {
-  background-image:
-    repeating-linear-gradient(
-      45deg,
-      transparent 0,
-      transparent 59px,
-      rgba(200, 215, 240, 0.045) 59.5px,
-      transparent 60px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      transparent 0,
-      transparent 59px,
-      rgba(200, 215, 240, 0.045) 59.5px,
+      var(--zooye-grid-light) 59.5px,
       transparent 60px
     );
   background-size: 120px 120px;
+  background-position: center top;
+  background-attachment: fixed;
 }
 
-/* CONTACT ICON — remove its dense internal grid */
+/* Hero: preserve the soft teal/gold glow and add a very subtle grid */
+.hero {
+  background-color: #ffffff !important;
+  background-image:
+    radial-gradient(circle at 80% 20%, rgba(18, 166, 160, 0.07) 0%, transparent 50%),
+    radial-gradient(circle at 10% 70%, rgba(245, 197, 66, 0.05) 0%, transparent 45%),
+    repeating-linear-gradient(45deg, transparent 0, transparent 59px, var(--zooye-grid-light) 59.5px, transparent 60px),
+    repeating-linear-gradient(-45deg, transparent 0, transparent 59px, var(--zooye-grid-light) 59.5px, transparent 60px) !important;
+  background-size: auto, auto, 120px 120px, 120px 120px;
+  background-position: center, center, center top, center top;
+}
+
+/* Light sections: remove duplicate local grids/opaque fills so the global grid shows */
+.why-zooye-section,
+.services-section,
+.whitelabel-section,
+.portfolio-section,
+.process-section,
+.quality-section,
+.faq-section,
+.trust-strip,
+.home-enquiry-section {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Also refine optional reusable grid utility classes */
+.tech-grid-light,
+.cross-grid-light {
+  background-color: #ffffff;
+  background-image:
+    repeating-linear-gradient(45deg, transparent 0, transparent 59px, var(--zooye-grid-light) 59.5px, transparent 60px),
+    repeating-linear-gradient(-45deg, transparent 0, transparent 59px, var(--zooye-grid-light) 59.5px, transparent 60px);
+  background-size: 120px 120px;
+}
+
+.tech-grid-diagonal {
+  background-image:
+    repeating-linear-gradient(45deg, transparent 0, transparent 59px, var(--zooye-grid-light) 59.5px, transparent 60px),
+    repeating-linear-gradient(-45deg, transparent 0, transparent 59px, var(--zooye-grid-light) 59.5px, transparent 60px);
+  background-size: 120px 120px;
+}
+
+/* Dark sections: matching grid in low-contrast blue-white */
+.signature-dark-section,
+.final-cta,
+.cta,
+.infbar,
+.wl-section,
+.tech-grid-dark,
+.cross-grid-dark {
+  background-image:
+    repeating-linear-gradient(45deg, transparent 0, transparent 59px, var(--zooye-grid-dark) 59.5px, transparent 60px),
+    repeating-linear-gradient(-45deg, transparent 0, transparent 59px, var(--zooye-grid-dark) 59.5px, transparent 60px);
+  background-size: 120px 120px;
+}
+
+/* Keep the enquiry illustration decorative, not a dense mesh */
 .home-enquiry-aside-mark {
   background-color: #ffffff;
   background-image:
-    repeating-linear-gradient(
-      45deg,
-      transparent 0,
-      transparent 19px,
-      rgba(0, 143, 140, 0.035) 19.5px,
-      transparent 20px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      transparent 0,
-      transparent 19px,
-      rgba(11, 25, 48, 0.025) 19.5px,
-      transparent 20px
-    ) !important;
+    repeating-linear-gradient(45deg, transparent 0, transparent 19px, rgba(0, 143, 140, 0.035) 19.5px, transparent 20px),
+    repeating-linear-gradient(-45deg, transparent 0, transparent 19px, rgba(11, 25, 48, 0.025) 19.5px, transparent 20px) !important;
   background-size: 40px 40px;
 }
 
-/* Keep cards and form controls readable */
+/* Preserve readable, solid surfaces for cards and form controls */
 .editorial-card,
 .modern-scard,
 .project-card,
@@ -5326,16 +5094,17 @@ textarea {
 .faq-card,
 .contact-form-card,
 .home-enquiry-form-card,
-.project-enquiry-form input,
-.project-enquiry-form select,
-.project-enquiry-form textarea {
+.project-enquiry-form .form-field input,
+.project-enquiry-form .form-field select,
+.project-enquiry-form .form-field textarea {
   background-color: #ffffff;
 }
 
-/* Mobile performance */
 @media (max-width: 768px) {
   body {
     background-attachment: scroll;
   }
 }
+
+
 
