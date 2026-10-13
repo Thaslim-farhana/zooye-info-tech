@@ -3198,62 +3198,49 @@ footer p.desc {
 }
 
 
-/* ZOOYE — Site-wide diagonal cross grid */
+/* Zestcode-style diagonal cross-grid background */
 :root {
-  --zooye-grid-size: 24px;
-  --zooye-grid-light: rgba(20, 45, 65, 0.055);
-  --zooye-grid-dark: rgba(255, 255, 255, 0.075);
+  --grid-spacing: 42px;
+  --grid-line-color: rgba(105, 83, 220, 0.10);
 }
 
-/* Light page background */
 body {
-  background-color: #fff;
+  background-color: #ffffff;
   background-image:
     repeating-linear-gradient(
-      45deg,
+      30deg,
       transparent 0,
-      transparent 23px,
-      var(--zooye-grid-light) 23px,
-      var(--zooye-grid-light) 24px
+      transparent calc(var(--grid-spacing) - 1px),
+      var(--grid-line-color) calc(var(--grid-spacing) - 1px),
+      var(--grid-line-color) var(--grid-spacing)
     ),
     repeating-linear-gradient(
-      -45deg,
+      150deg,
       transparent 0,
-      transparent 23px,
-      var(--zooye-grid-light) 23px,
-      var(--zooye-grid-light) 24px
+      transparent calc(var(--grid-spacing) - 1px),
+      var(--grid-line-color) calc(var(--grid-spacing) - 1px),
+      var(--grid-line-color) var(--grid-spacing)
     );
-  background-size: 24px 24px;
+  background-size: 72px 72px;
+  background-attachment: fixed;
 }
 
-/* Dark CTA and dark sections */
-.dark-section,
-.hero-dark,
-.cta-section,
-.final-cta {
-  background-image:
-    repeating-linear-gradient(
-      45deg,
-      transparent 0,
-      transparent 23px,
-      var(--zooye-grid-dark) 23px,
-      var(--zooye-grid-dark) 24px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      transparent 0,
-      transparent 23px,
-      var(--zooye-grid-dark) 23px,
-      var(--zooye-grid-dark) 24px
-    );
+/* Allow the global grid to show through page sections */
+main,
+section {
+  background-color: transparent;
 }
 
-/* Responsive grid */
+/* Keep cards and content surfaces readable */
+.service-card,
+.portfolio-card,
+.testimonial-card,
+.faq-card,
+form {
+  background-color: #ffffff;
+}
+
 @media (max-width: 768px) {
-  :root {
-    --zooye-grid-size: 24px;
-  }
-
   body {
     background-attachment: scroll;
   }
