@@ -5295,3 +5295,61 @@ textarea {
   }
 }
 ```
+
+/* ZOOYE PIPELINE SECTION — SVG ICON FIX */
+.zooye-architecture {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #0b1020;
+  color: #ffffff;
+}
+
+.zooye-architecture .step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  background: rgba(18, 166, 160, 0.12);
+  border: 1px solid rgba(18, 166, 160, 0.35);
+}
+
+.zooye-architecture .step-icon svg {
+  display: block;
+  width: 28px;
+  height: 28px;
+  max-width: 100%;
+  overflow: visible;
+  fill: none;
+  stroke: #12a6a0;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.zooye-architecture .pipeline-steps {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.zooye-architecture .pipeline-step {
+  min-width: 0;
+  position: relative;
+}
+
+@media (max-width: 900px) {
+  .zooye-architecture .pipeline-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .zooye-architecture .pipeline-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
