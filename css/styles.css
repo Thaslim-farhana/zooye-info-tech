@@ -5555,3 +5555,62 @@ textarea {
   }
 }
 
+/* Floating badges around the pipeline card */
+.signature-dark-section .architecture-panel {
+  position: relative;
+  overflow: visible;
+}
+
+.signature-dark-section .floating-label {
+  position: absolute;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #192b40;
+  color: #ffffff;
+  border: 1px solid rgba(100, 130, 160, 0.45);
+  border-radius: 30px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.signature-dark-section .label-top {
+  top: 12px;
+  right: -12px;
+}
+
+.signature-dark-section .label-bottom {
+  bottom: 12px;
+  left: -12px;
+}
+
+.signature-dark-section .shield-icon,
+.signature-dark-section .lightning-icon {
+  color: #ffd166;
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Mobile: keep badges inside the panel boundaries */
+@media (max-width: 520px) {
+  .signature-dark-section .label-top {
+    top: 8px;
+    right: 8px;
+  }
+
+  .signature-dark-section .label-bottom {
+    bottom: 8px;
+    left: 8px;
+  }
+
+  .signature-dark-section .floating-label {
+    font-size: 9px;
+    padding: 8px 10px;
+  }
+}
+
+
