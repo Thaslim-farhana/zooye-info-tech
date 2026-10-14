@@ -5296,319 +5296,58 @@ textarea {
 }
 ```
 
-/* =========================================
-   ZOOYE HERO + PIPELINE — PROFESSIONAL FINISH
-   ========================================= */
 
-.signature-dark-section {
-  background-color: #071321;
-  background-image:
-    radial-gradient(
-      ellipse at 85% 15%,
-      rgba(0, 157, 165, 0.10),
-      transparent 42%
-    ),
-    repeating-linear-gradient(
-      45deg,
-      transparent 0,
-      transparent 47px,
-      rgba(170, 195, 220, 0.035) 47px,
-      rgba(170, 195, 220, 0.035) 48px
-    );
-}
+/* ZOOYE PIPELINE — FINAL VISUAL FIX */
 
-.signature-dark-section .dark-grid {
-  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
-  gap: clamp(28px, 4vw, 58px);
-  align-items: center;
-}
-
-.signature-dark-section .dark-content h2 {
-  max-width: 680px;
-  font-size: clamp(38px, 4vw, 54px);
-  line-height: 1.08;
-  letter-spacing: -1.8px;
-  text-wrap: balance;
-}
-
-.signature-dark-section .dark-content .dark-lead {
-  max-width: 590px;
-  color: #aebfd2;
-  font-size: 17px;
-  line-height: 1.8;
-}
-
-.signature-dark-section .architecture-panel {
-  padding: clamp(20px, 2.2vw, 30px);
-  border: 1px solid rgba(147, 174, 203, 0.19);
-  border-radius: 22px;
-  background: linear-gradient(
-    145deg,
-    #17283d 0%,
-    #122237 100%
-  ) !important;
-  box-shadow:
-    0 25px 70px rgba(0, 0, 0, 0.20),
-    inset 0 1px 0 rgba(255, 255, 255, 0.035);
-}
-
-.signature-dark-section .architecture-header {
-  padding-bottom: 20px;
-  border-bottom-color: rgba(174, 195, 218, 0.14);
-}
-
-.signature-dark-section .architecture-heading {
-  font-size: 11px;
-  letter-spacing: 0.65px;
-}
-
-.signature-dark-section .pipeline-flow {
-  gap: 9px;
-  padding-top: 22px;
-}
-
-.signature-dark-section .pipeline-step {
-  min-height: 78px;
-  padding: 14px;
-  border-radius: 13px;
-  border-color: rgba(151, 177, 205, 0.12);
-  background: rgba(37, 56, 79, 0.78) !important;
-}
-
-.signature-dark-section .pipeline-step:hover {
-  border-color: rgba(33, 185, 177, 0.45);
-  background: #263d53 !important;
-}
-
-.signature-dark-section .pipeline-step.active,
-.signature-dark-section .pipeline-step.revenue-step {
-  background: linear-gradient(
-    110deg,
-    rgba(20, 65, 75, 0.98),
-    rgba(24, 53, 72, 0.98)
-  ) !important;
-  border-color: rgba(33, 185, 177, 0.40);
-}
-
+/* Keep pipeline icons as teal outline SVGs */
 .signature-dark-section .step-icon {
-  flex-basis: 44px;
-  width: 44px;
-  height: 44px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  background: rgba(33, 185, 177, 0.10) !important;
+  border: 1px solid rgba(33, 185, 177, 0.25);
   border-radius: 12px;
 }
 
+.signature-dark-section .step-icon svg {
+  display: block !important;
+  width: 24px !important;
+  height: 24px !important;
+  fill: none !important;
+  stroke: #30d1c5 !important;
+  stroke-width: 1.8 !important;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Restore readable text on dark pipeline cards */
 .signature-dark-section .step-content h3 {
+  color: #f8fafc !important;
   font-size: 12px;
-  letter-spacing: 0.25px;
-  line-height: 1.45;
+  font-weight: 800;
 }
 
 .signature-dark-section .step-content p {
+  color: #b5c4d7 !important;
   font-size: 11px;
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
-.signature-dark-section .step-status,
-.signature-dark-section .growth-status {
-  padding: 8px 9px;
-  font-size: 10px;
-  border-radius: 8px;
+.signature-dark-section .step-status {
+  background: #354960 !important;
+  color: #f1f6fc !important;
 }
 
 .signature-dark-section .pipeline-arrow {
-  height: 17px;
-  color: #39d2c7 !important;
+  color: #30d1c5 !important;
 }
 
-/* Floating labels: prevent overlap with pipeline content */
-.signature-dark-section .floating-label {
-  z-index: 2;
-  padding: 9px 12px;
-  font-size: 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.20);
-}
-
-.signature-dark-section .label-top {
-  top: -13px;
-  right: 16px;
-}
-
-.signature-dark-section .label-bottom {
-  bottom: -13px;
-  left: 16px;
-}
-
-/* Hero CTA buttons */
-.signature-dark-section .hero-ctas {
-  display: flex;
-  flex-wrap: wrap;
+/* Keep the hero content vertically balanced */
+.signature-dark-section .dark-grid {
   align-items: center;
-  gap: 12px;
-  margin-top: 28px;
 }
 
-.signature-dark-section .hero-ctas .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  min-height: 48px;
-  padding: 13px 20px;
-  border-radius: 12px;
-  font-size: 13px;
-  font-weight: 700;
-  text-decoration: none;
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease,
-    background 180ms ease;
-}
-
-.signature-dark-section .hero-ctas .btn:hover {
-  transform: translateY(-2px);
-}
-
-.signature-dark-section .hero-ctas .btn-primary {
-  background: #0fa6a3;
-  box-shadow: 0 8px 22px rgba(0, 166, 163, 0.15);
-}
-
-.signature-dark-section .hero-ctas .btn-outline-dark {
-  border: 1px solid rgba(170, 195, 220, 0.2);
-  background: rgba(255, 255, 255, 0.035);
-  color: #f3f7fc;
-}
-
-/* Tablet */
-@media (max-width: 1000px) {
-  .signature-dark-section .dark-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 36px;
-  }
-
-  .signature-dark-section .dark-content h2 {
-    max-width: 720px;
-  }
-
-  .signature-dark-section .zooye-architecture {
-    width: 100%;
-    max-width: 760px;
-    margin-inline: auto;
-  }
-}
-
-/* Mobile */
-@media (max-width: 520px) {
-  .signature-dark-section .dark-content h2 {
-    font-size: clamp(32px, 9vw, 42px);
-    letter-spacing: -1px;
-  }
-
-  .signature-dark-section .dark-content .dark-lead {
-    font-size: 15px;
-    line-height: 1.7;
-  }
-
-  .signature-dark-section .architecture-panel {
-    padding: 20px 12px;
-    border-radius: 17px;
-  }
-
-  .signature-dark-section .architecture-header {
-    align-items: flex-start;
-  }
-
-  .signature-dark-section .architecture-heading {
-    font-size: 10px;
-  }
-
-  .signature-dark-section .pipeline-step {
-    gap: 10px;
-    padding: 11px;
-  }
-
-  .signature-dark-section .step-status,
-  .signature-dark-section .growth-status {
-    font-size: 9px;
-    padding: 7px;
-  }
-
-  .signature-dark-section .floating-label {
-    font-size: 9px;
-    padding: 8px 10px;
-  }
-
-  .signature-dark-section .hero-ctas {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .signature-dark-section .hero-ctas .btn {
-    width: 100%;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .signature-dark-section .pipeline-step,
-  .signature-dark-section .hero-ctas .btn {
-    transition: none;
-  }
-}
-
-/* Floating badges around the pipeline card */
 .signature-dark-section .architecture-panel {
-  position: relative;
-  overflow: visible;
-}
-
-.signature-dark-section .floating-label {
-  position: absolute;
-  z-index: 5;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 14px;
-  background: #192b40;
-  color: #ffffff;
-  border: 1px solid rgba(100, 130, 160, 0.45);
-  border-radius: 30px;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
-  font-size: 11px;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.signature-dark-section .label-top {
-  top: 12px;
-  right: -12px;
-}
-
-.signature-dark-section .label-bottom {
-  bottom: 12px;
-  left: -12px;
-}
-
-.signature-dark-section .shield-icon,
-.signature-dark-section .lightning-icon {
-  color: #ffd166;
-  font-size: 18px;
-  line-height: 1;
-}
-
-/* Mobile: keep badges inside the panel boundaries */
-@media (max-width: 520px) {
-  .signature-dark-section .label-top {
-    top: 8px;
-    right: 8px;
-  }
-
-  .signature-dark-section .label-bottom {
-    bottom: 8px;
-    left: 8px;
-  }
-
-  .signature-dark-section .floating-label {
-    font-size: 9px;
-    padding: 8px 10px;
-  }
+  background: #142438 !important;
+  border-color: rgba(147, 174, 203, 0.22);
 }
