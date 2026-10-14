@@ -5295,30 +5295,3 @@ textarea {
   }
 }
 ```
-```css
-/* Fix black SVG icons in the hero illustration */
-.infinity-svg-wrapper svg {
-  width: 100%;
-  height: auto;
-  display: block;
-  fill: #12A6A0;
-  color: #12A6A0;
-}
-
-/* Keep SVG outlines visible */
-.infinity-svg-wrapper svg path,
-.infinity-svg-wrapper svg circle,
-.infinity-svg-wrapper svg ellipse {
-  stroke: #12A6A0;
-}
-
-/* Prevent SVGs from overflowing */
-.infinity-stage,
-.infinity-stage-inner,
-.infinity-svg-wrapper {
-  min-width: 0;
-  max-width: 100%;
-  overflow: hidden;
-}
-```
-
