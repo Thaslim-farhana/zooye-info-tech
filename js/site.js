@@ -217,11 +217,58 @@ tRows.forEach(row => {
   container.innerHTML = doubled.map(testimonialHTML).join('');
 });
 ;
-/* ---------------- LOGO CAROUSEL (PLACEHOLDER) ---------------- */
-const logoCarouselSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>';
-const logoCarouselLabels = ["Client Logo","Client Logo","Client Logo","Client Logo","Client Logo","Client Logo"];
-const logoCarouselTrack = document.getElementById('logo-carousel-track');
-logoCarouselTrack.innerHTML = (logoCarouselLabels.concat(logoCarouselLabels)).map(l => `<span class="logo-carousel-item">${logoCarouselSvg}${l}</span>`).join('');
+
+/* ---------------- CLIENT LOGO CAROUSEL ---------------- */
+
+const clientLogos = [
+  {
+    name: "Client One",
+    image: "assets/images/client 1.jpg",
+    url: ""
+  },
+  {
+    name: "Client Two",
+    image: "assets/images/client 2.png",
+    url: ""
+  },
+  {
+    name: "Client Three",
+    image: "assets/images/client 3.webp",
+    url: ""
+  }
+  {
+    name: "Client Three",
+    image: "assets/images/client 4.webp",
+    url: ""
+  }
+];
+
+const logoCarouselTrack = document.getElementById("logo-carousel-track");
+
+if (logoCarouselTrack && clientLogos.length) {
+  // Duplicate the logos for a seamless scrolling carousel.
+  const logos = [...clientLogos, ...clientLogos];
+
+  logoCarouselTrack.innerHTML = logos.map(client => {
+    const image = `
+      <img
+        src="${client.image}"
+        alt="${client.name} logo"
+        loading="lazy"
+      >
+    `;
+
+    return client.url
+      ? `<a class="logo-carousel-item"
+            href="${client.url}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit ${client.name}">
+           ${image}
+         </a>`
+      : `<span class="logo-carousel-item">${image}</span>`;
+  }).join("");
+}
 
 
   // Scroll reveals
