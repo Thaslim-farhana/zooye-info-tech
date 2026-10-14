@@ -5613,4 +5613,62 @@ textarea {
   }
 }
 
+/* =========================================
+   CONTINUOUS FLOATING BADGE ANIMATION
+========================================= */
+
+.signature-dark-section .floating-label {
+  position: absolute;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  animation: zooyeFloat 3.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Top badge */
+.signature-dark-section .label-top {
+  top: 12px;
+  right: -12px;
+  animation-delay: 0s;
+}
+
+/* Bottom badge floats at a different time */
+.signature-dark-section .label-bottom {
+  bottom: 12px;
+  left: -12px;
+  animation-delay: 1.2s;
+}
+
+@keyframes zooyeFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .signature-dark-section .floating-label {
+    animation: none;
+    will-change: auto;
+  }
+}
+
+/* Keep floating badges inside the panel on mobile */
+@media (max-width: 520px) {
+  .signature-dark-section .label-top {
+    right: 8px;
+  }
+
+  .signature-dark-section .label-bottom {
+    left: 8px;
+  }
+}
+
 
