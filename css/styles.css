@@ -5178,13 +5178,13 @@ body {
     linear-gradient(
       45deg,
       transparent 49.7%,
-      rgba(200, 215, 240, 0.06) 50%,
+      rgba(100, 100, 150, 0.07) 50%,
       transparent 50.3%
     ),
     linear-gradient(
       -45deg,
       transparent 49.7%,
-      rgba(200, 215, 240, 0.06) 50%,
+      rgba(100, 100, 150, 0.07) 50%,
       transparent 50.3%
     );
   background-size: 120px 120px;
@@ -5295,5 +5295,30 @@ textarea {
   }
 }
 ```
+```css
+/* Fix black SVG icons in the hero illustration */
+.infinity-svg-wrapper svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  fill: #12A6A0;
+  color: #12A6A0;
+}
 
+/* Keep SVG outlines visible */
+.infinity-svg-wrapper svg path,
+.infinity-svg-wrapper svg circle,
+.infinity-svg-wrapper svg ellipse {
+  stroke: #12A6A0;
+}
+
+/* Prevent SVGs from overflowing */
+.infinity-stage,
+.infinity-stage-inner,
+.infinity-svg-wrapper {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+```
 
