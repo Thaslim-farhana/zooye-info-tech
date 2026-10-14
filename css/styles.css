@@ -5555,3 +5555,292 @@ textarea {
     transition: none;
   }
 }
+
+/* =========================================
+   ZOOYE PIPELINE — RESTORE CARD LAYOUT
+========================================= */
+
+.signature-dark-section .zooye-architecture {
+  display: block !important;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  padding: 24px 0;
+  color: #f8fafc;
+  background: transparent !important;
+}
+
+.signature-dark-section .architecture-panel {
+  position: relative;
+  width: 100%;
+  padding: 24px;
+  border: 1px solid #34475e;
+  border-radius: 22px;
+  background: #142438 !important;
+  color: #f8fafc;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.22);
+}
+
+.signature-dark-section .architecture-header {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(180, 200, 225, 0.15);
+}
+
+.signature-dark-section .architecture-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #f8fafc !important;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.signature-dark-section .window-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.signature-dark-section .window-dots span {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #64748b;
+}
+
+.signature-dark-section .window-dots span:first-child {
+  background: #fb7185;
+}
+
+.signature-dark-section .window-dots span:nth-child(2) {
+  background: #fbbf24;
+}
+
+.signature-dark-section .window-dots span:nth-child(3) {
+  background: #34d399;
+}
+
+.signature-dark-section .live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border: 1px solid rgba(33, 185, 177, 0.3);
+  border-radius: 30px;
+  background: rgba(33, 185, 177, 0.08);
+  color: #55ddd2 !important;
+  font-size: 10px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.signature-dark-section .live-badge i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #21b9b1;
+}
+
+.signature-dark-section .pipeline-flow {
+  display: flex !important;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 20px;
+}
+
+.signature-dark-section .pipeline-step {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  min-height: 74px;
+  padding: 13px;
+  border: 1px solid rgba(151, 177, 205, 0.15);
+  border-radius: 14px;
+  background: #24374e !important;
+  color: #f8fafc !important;
+}
+
+.signature-dark-section .pipeline-step.active,
+.signature-dark-section .pipeline-step.revenue-step {
+  background: #193b49 !important;
+  border-color: rgba(33, 185, 177, 0.4);
+}
+
+.signature-dark-section .step-icon {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(33, 185, 177, 0.25);
+  border-radius: 11px;
+  background: rgba(33, 185, 177, 0.1) !important;
+}
+
+.signature-dark-section .step-icon svg {
+  display: block !important;
+  width: 23px !important;
+  height: 23px !important;
+  fill: none !important;
+  stroke: #30d1c5 !important;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.signature-dark-section .step-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.signature-dark-section .step-content h3 {
+  margin: 0 0 5px;
+  color: #f8fafc !important;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.signature-dark-section .step-content p {
+  margin: 0;
+  color: #b5c4d7 !important;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.signature-dark-section .step-status,
+.signature-dark-section .growth-status {
+  flex-shrink: 0;
+  padding: 7px 8px;
+  border-radius: 7px;
+  background: #354960 !important;
+  color: #f1f6fc !important;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.signature-dark-section .growth-status {
+  background: #21b9b1 !important;
+  color: #082a32 !important;
+}
+
+.signature-dark-section .pipeline-arrow {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  height: 17px;
+  color: #30d1c5 !important;
+  font-size: 20px;
+}
+
+.signature-dark-section .floating-label {
+  position: absolute;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border: 1px solid #344960;
+  border-radius: 30px;
+  background: #142438 !important;
+  color: #f8fafc !important;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+}
+
+.signature-dark-section .label-top {
+  top: 10px;
+  right: 12px;
+}
+
+.signature-dark-section .label-bottom {
+  bottom: 10px;
+  left: 12px;
+}
+
+/* Continuous floating animation */
+.signature-dark-section .label-top {
+  animation: zooyeFloatTop 3.5s ease-in-out infinite;
+}
+
+.signature-dark-section .label-bottom {
+  animation: zooyeFloatBottom 3.5s ease-in-out 1.2s infinite;
+}
+
+@keyframes zooyeFloatTop {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes zooyeFloatBottom {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@media (max-width: 1050px) {
+  .signature-dark-section .dark-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .signature-dark-section .zooye-architecture {
+    max-width: 760px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .signature-dark-section .architecture-panel {
+    padding: 20px 12px;
+  }
+
+  .signature-dark-section .architecture-header {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .signature-dark-section .pipeline-step {
+    display: grid !important;
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 9px;
+    padding: 11px;
+  }
+
+  .signature-dark-section .step-icon {
+    grid-row: 1 / span 2;
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+  }
+
+  .signature-dark-section .step-status,
+  .signature-dark-section .growth-status {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .signature-dark-section .label-top {
+    right: 8px;
+  }
+
+  .signature-dark-section .label-bottom {
+    left: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signature-dark-section .floating-label {
+    animation: none !important;
+  }
+}
+
