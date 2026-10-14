@@ -5296,74 +5296,57 @@ textarea {
 }
 ```
 
-/* ==========================================
-   ZOOYE ARCHITECTURE PIPELINE — LAYOUT FIX
-========================================== */
-
-.signature-dark-section {
-  position: relative;
-  overflow: hidden;
-  background-color: #071521;
-  color: #f8fafc;
-}
-
-.signature-dark-section .wrap {
-  width: min(1200px, calc(100% - 48px));
-  margin-inline: auto;
-}
+/* =========================================
+   ZOOYE PIPELINE — VISUAL REPAIR
+   ========================================= */
 
 .signature-dark-section .dark-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: 42px;
+  grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr);
   align-items: center;
-  position: relative;
-}
-
-.signature-dark-section .dark-content {
-  min-width: 0;
+  gap: 48px;
 }
 
 .signature-dark-section .zooye-architecture {
-  display: block;
+  display: block !important;
   position: relative;
   width: 100%;
   min-width: 0;
-  padding: 28px 0;
-  overflow: visible;
-  background: transparent;
-  opacity: 1;
-  visibility: visible;
+  padding: 30px 0;
+  color: #f8fafc !important;
+  background: transparent !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .signature-dark-section .architecture-panel {
+  display: block !important;
   position: relative;
   width: 100%;
-  min-width: 0;
-  padding: 25px 22px;
-  border: 1px solid rgba(125, 155, 185, 0.24);
-  border-radius: 22px;
-  background: #142438;
-  color: #f8fafc;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+  padding: 24px;
+  overflow: visible;
+  border: 1px solid #34475e;
+  border-radius: 24px;
+  background: #17283d !important;
+  color: #f8fafc !important;
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.25);
 }
 
 .signature-dark-section .architecture-header {
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
   padding-bottom: 18px;
-  border-bottom: 1px solid rgba(155, 180, 205, 0.16);
+  border-bottom: 1px solid rgba(180, 200, 225, 0.16);
 }
 
 .signature-dark-section .architecture-heading {
   display: flex;
   align-items: center;
   gap: 10px;
-  min-width: 0;
-  color: #dbe7f4;
+  color: #f1f6fc !important;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.5px;
@@ -5371,19 +5354,20 @@ textarea {
 
 .signature-dark-section .window-dots {
   display: flex;
-  flex-shrink: 0;
   gap: 5px;
+  flex-shrink: 0;
 }
 
 .signature-dark-section .window-dots span {
+  display: block;
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #60758d;
+  background: #657991;
 }
 
 .signature-dark-section .window-dots span:first-child {
-  background: #f87171;
+  background: #fb7185;
 }
 
 .signature-dark-section .window-dots span:nth-child(2) {
@@ -5398,74 +5382,78 @@ textarea {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  padding: 7px 9px;
-  border: 1px solid rgba(33, 185, 177, 0.25);
-  border-radius: 20px;
-  background: rgba(33, 185, 177, 0.08);
-  color: #54ddd1;
+  padding: 7px 10px;
+  border: 1px solid rgba(33, 185, 177, 0.3);
+  border-radius: 30px;
+  background: rgba(33, 185, 177, 0.09);
+  color: #53ddd2 !important;
   font-size: 10px;
   font-weight: 800;
   white-space: nowrap;
 }
 
 .signature-dark-section .live-badge i {
+  display: inline-block;
   width: 7px;
   height: 7px;
   border-radius: 50%;
   background: #21b9b1;
-  box-shadow: 0 0 10px rgba(33, 185, 177, 0.65);
+  box-shadow: 0 0 9px rgba(33, 185, 177, 0.7);
 }
 
 .signature-dark-section .pipeline-flow {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   gap: 8px;
   padding-top: 20px;
 }
 
 .signature-dark-section .pipeline-step {
-  display: flex;
+  display: flex !important;
   align-items: center;
-  gap: 12px;
+  gap: 13px;
+  width: 100%;
   min-width: 0;
-  padding: 13px;
-  border: 1px solid rgba(130, 155, 185, 0.17);
+  min-height: 72px;
+  padding: 13px 14px;
+  border: 1px solid rgba(151, 177, 205, 0.17);
   border-radius: 14px;
-  background: #203249;
-  color: #f8fafc;
-  transition: border-color 180ms ease, transform 180ms ease;
+  background: #24374e !important;
+  color: #f8fafc !important;
+  box-shadow: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
 .signature-dark-section .pipeline-step:hover {
-  transform: translateY(-2px);
   border-color: rgba(33, 185, 177, 0.55);
+  transform: translateY(-2px);
 }
 
 .signature-dark-section .pipeline-step.active,
 .signature-dark-section .pipeline-step.revenue-step {
+  background: linear-gradient(110deg, #173c49, #1b354b) !important;
   border-color: rgba(33, 185, 177, 0.42);
-  background: #183748;
 }
 
 .signature-dark-section .step-icon {
-  display: flex;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
   flex: 0 0 42px;
   width: 42px;
   height: 42px;
-  align-items: center;
-  justify-content: center;
   border: 1px solid rgba(33, 185, 177, 0.25);
   border-radius: 11px;
-  background: rgba(33, 185, 177, 0.09);
+  background: rgba(33, 185, 177, 0.1) !important;
 }
 
 .signature-dark-section .step-icon svg {
-  display: block;
+  display: block !important;
   width: 23px;
   height: 23px;
-  fill: none;
-  stroke: #32d2c5;
-  stroke-width: 1.7;
+  fill: none !important;
+  stroke: #30d1c5 !important;
+  stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
   overflow: visible;
@@ -5478,100 +5466,98 @@ textarea {
 
 .signature-dark-section .step-content h3 {
   margin: 0 0 5px;
-  color: #f8fafc;
+  color: #f8fafc !important;
   font-size: 12px;
-  line-height: 1.4;
   font-weight: 800;
-  letter-spacing: 0.2px;
+  line-height: 1.4;
+  letter-spacing: 0.25px;
 }
 
 .signature-dark-section .step-content p {
   margin: 0;
-  color: #a9bacd;
+  color: #b5c4d7 !important;
   font-size: 11px;
   line-height: 1.5;
 }
 
 .signature-dark-section .step-status,
 .signature-dark-section .growth-status {
+  display: inline-block;
   flex-shrink: 0;
   padding: 7px 8px;
   border-radius: 7px;
-  background: #30445b;
-  color: #dbe7f4;
+  background: #354960 !important;
+  color: #e2ebf5 !important;
   font-size: 10px;
   font-weight: 700;
+  line-height: 1.3;
   white-space: nowrap;
 }
 
 .signature-dark-section .growth-status {
-  background: #21b9b1;
-  color: #09252c;
+  background: #21b9b1 !important;
+  color: #082a32 !important;
 }
 
 .signature-dark-section .pipeline-arrow {
-  display: flex;
-  justify-content: center;
+  display: flex !important;
   align-items: center;
-  height: 16px;
-  color: #21b9b1;
-  font-size: 19px;
+  justify-content: center;
+  height: 17px;
+  color: #30d1c5 !important;
+  font-size: 20px;
   line-height: 1;
 }
 
 .signature-dark-section .floating-label {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 10px 13px;
-  border: 1px solid #344860;
+  border: 1px solid #344960;
   border-radius: 30px;
-  background: #142236;
-  color: #f8fafc;
+  background: #142438 !important;
+  color: #f8fafc !important;
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 700;
   white-space: nowrap;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
 }
 
 .signature-dark-section .label-top {
-  top: 10px;
+  top: 8px;
   right: -8px;
 }
 
 .signature-dark-section .label-bottom {
-  bottom: 10px;
+  bottom: 8px;
   left: -8px;
 }
 
 .signature-dark-section .shield-icon,
 .signature-dark-section .lightning-icon {
-  color: #f4c536;
+  color: #ffd166 !important;
   font-size: 18px;
   line-height: 1;
 }
 
-/* Tablet and smaller laptops */
-@media (max-width: 1000px) {
+/* Tablet */
+@media (max-width: 1050px) {
   .signature-dark-section .dark-grid {
     grid-template-columns: minmax(0, 1fr);
-    gap: 28px;
+    gap: 30px;
   }
 
   .signature-dark-section .zooye-architecture {
-    max-width: 720px;
+    max-width: 760px;
     margin-inline: auto;
   }
 }
 
 /* Mobile */
 @media (max-width: 520px) {
-  .signature-dark-section .wrap {
-    width: calc(100% - 32px);
-  }
-
   .signature-dark-section .architecture-panel {
     padding: 20px 12px;
     border-radius: 17px;
@@ -5579,11 +5565,10 @@ textarea {
 
   .signature-dark-section .architecture-heading {
     font-size: 10px;
-    letter-spacing: 0.2px;
   }
 
   .signature-dark-section .pipeline-step {
-    display: grid;
+    display: grid !important;
     grid-template-columns: 36px minmax(0, 1fr);
     gap: 9px;
     padding: 11px;
@@ -5613,12 +5598,6 @@ textarea {
 
   .signature-dark-section .label-bottom {
     left: 4px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .signature-dark-section .pipeline-step {
-    transition: none;
   }
 }
 
