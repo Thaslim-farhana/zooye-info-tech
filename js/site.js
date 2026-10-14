@@ -207,10 +207,16 @@ const tRows = [
   { id:'testimonial-row-1', items:[testimonials[0], testimonials[1], testimonials[2]] },
   { id:'testimonial-row-2', items:[testimonials[3], testimonials[4], testimonials[5]] },
 ];
+
 tRows.forEach(row => {
+  const container = document.getElementById(row.id);
+
+  if (!container) return;
+
   const doubled = row.items.concat(row.items);
-  document.getElementById(row.id).innerHTML = doubled.map(testimonialHTML).join('');
+  container.innerHTML = doubled.map(testimonialHTML).join('');
 });
+;
 /* ---------------- LOGO CAROUSEL (PLACEHOLDER) ---------------- */
 const logoCarouselSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>';
 const logoCarouselLabels = ["Client Logo","Client Logo","Client Logo","Client Logo","Client Logo","Client Logo"];
