@@ -5208,28 +5208,25 @@ textarea {
     background-attachment: scroll;
   }
 }
-
-/* ZOOYE — SUBTLE SQUARE BOX GRID BACKGROUND */
+```css
+/* ZOOYE — 45-DEGREE DIAGONAL GRID BACKGROUND */
 
 body {
   background-color: #ffffff;
   background-image:
-    linear-gradient(
-      to right,
+    repeating-linear-gradient(
+      45deg,
+      rgba(100, 100, 150, 0.07) 0,
       rgba(100, 100, 150, 0.07) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      to bottom,
-      rgba(100, 100, 150, 0.07) 1px,
-      transparent 1px
+      transparent 1px,
+      transparent 60px
     );
   background-size: 60px 60px;
   background-position: center top;
   background-attachment: fixed;
 }
 
-/* Let the square grid show through light sections */
+/* Light sections: show diagonal grid */
 .why-zooye-section,
 .services-section,
 .whitelabel-section,
@@ -5243,7 +5240,7 @@ body {
   background-image: none !important;
 }
 
-/* Hero section: square grid + subtle glow */
+/* Hero: diagonal grid + subtle teal glow */
 .hero {
   background-color: #ffffff;
   background-image:
@@ -5252,35 +5249,29 @@ body {
       rgba(18, 166, 160, 0.08),
       transparent 50%
     ),
-    linear-gradient(
-      to right,
+    repeating-linear-gradient(
+      45deg,
+      rgba(100, 100, 150, 0.07) 0,
       rgba(100, 100, 150, 0.07) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      to bottom,
-      rgba(100, 100, 150, 0.07) 1px,
-      transparent 1px
+      transparent 1px,
+      transparent 60px
     ) !important;
-  background-size: auto, 60px 60px, 60px 60px;
+  background-size: auto, 60px 60px !important;
 }
 
-/* Dark sections: subtle square grid */
+/* Dark sections: subtle diagonal grid */
 .signature-dark-section,
 .final-cta,
 .cta,
 .infbar,
 .wl-section {
   background-image:
-    linear-gradient(
-      to right,
+    repeating-linear-gradient(
+      45deg,
+      rgba(200, 215, 240, 0.07) 0,
       rgba(200, 215, 240, 0.07) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      to bottom,
-      rgba(200, 215, 240, 0.07) 1px,
-      transparent 1px
+      transparent 1px,
+      transparent 60px
     );
   background-size: 60px 60px;
 }
@@ -5297,8 +5288,12 @@ textarea {
   background-color: #ffffff;
 }
 
+/* Mobile */
 @media (max-width: 768px) {
   body {
     background-attachment: scroll;
   }
 }
+```
+
+
