@@ -218,6 +218,7 @@ tRows.forEach(row => {
 });
 ;
 
+
 /* ---------------- CLIENT LOGO CAROUSEL ---------------- */
 
 const clientLogos = [
@@ -235,9 +236,9 @@ const clientLogos = [
     name: "Client Three",
     image: "assets/images/client 3.webp",
     url: ""
-  }
+  },
   {
-    name: "Client Three",
+    name: "Client Four",
     image: "assets/images/client 4.webp",
     url: ""
   }
@@ -245,31 +246,20 @@ const clientLogos = [
 
 const logoCarouselTrack = document.getElementById("logo-carousel-track");
 
-if (logoCarouselTrack && clientLogos.length) {
-  // Duplicate the logos for a seamless scrolling carousel.
+if (logoCarouselTrack && clientLogos.length > 0) {
   const logos = [...clientLogos, ...clientLogos];
 
-  logoCarouselTrack.innerHTML = logos.map(client => {
-    const image = `
+  logoCarouselTrack.innerHTML = logos.map(client => `
+    <span class="logo-carousel-item">
       <img
         src="${client.image}"
         alt="${client.name} logo"
         loading="lazy"
+        onerror="console.error('Logo failed to load:', this.src)"
       >
-    `;
-
-    return client.url
-      ? `<a class="logo-carousel-item"
-            href="${client.url}"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Visit ${client.name}">
-           ${image}
-         </a>`
-      : `<span class="logo-carousel-item">${image}</span>`;
-  }).join("");
+    </span>
+  `).join("");
 }
-
 
   // Scroll reveals
   function initScrollReveals() {
