@@ -5957,134 +5957,57 @@ textarea {
   overflow: visible;
 }
 
-/* FIX: White Label showcase text contrast */
-.wl-section .wl-head h2,
-.wl-section .wl-feature h3 {
-  color: #0B1930 !important;
-}
 
-.wl-section .wl-head p,
-.wl-section .wl-lead,
-.wl-section .wl-feature p {
-  color: #64748B !important;
-  opacity: 1 !important;
-}
-
-.wl-section .wl-features {
-  gap: 20px;
-  margin-bottom: 30px;
-}
-
-.wl-section .wl-feature {
-  align-items: flex-start;
-  min-width: 0;
-}
-
-.wl-section .wl-feature-icon {
-  flex-shrink: 0;
-}
-
-.wl-section .wl-pills .wl-pill {
-  color: #334155 !important;
-  background: #F1F6F8;
-  border-color: #E2E8F0;
-  opacity: 1 !important;
-}
-
-/* Keep feature icons visible */
-.wl-section .wl-feature-icon svg {
-  color: #008F8C;
-}
-
-/* Prevent clipping on smaller screens */
-@media (max-width: 640px) {
-  .wl-section {
-    padding: 30px 20px;
-    border-radius: 18px;
-  }
-
-  .wl-section .wl-pills {
-    gap: 8px;
-  }
-}
-
-/* ==================================================
-   ZOOYE WHITE LABEL — VISIBILITY FIX
-   Keep text readable on light and dark panels
-================================================== */
-
-/* Light White Label card */
-.whitelabel-banner,
-.whitelabel-banner * {
-  opacity: 1;
-}
-
-.whitelabel-banner h1,
-.whitelabel-banner h2,
-.whitelabel-banner h3,
-.whitelabel-banner h4,
-.whitelabel-banner h5,
-.whitelabel-banner .wl-pill,
-.whitelabel-banner .trust-badge-pill {
-  color: #0B1930 !important;
-}
-
-.whitelabel-banner p,
-.whitelabel-banner .wl-lead {
-  color: #64748B !important;
-}
-
-/* Feature labels and icons on the light card */
-.whitelabel-banner .whitelabel-pills,
-.whitelabel-banner .wl-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px 20px;
-}
-
+/* =========================================================
+   FIX: WHITE LABEL FEATURE TEXT VISIBILITY
+   Root cause: the later generic .wl-pill rule (dark-panel
+   styling) overrides the earlier light-card .wl-pill rule.
+   Keep dark-panel styling scoped to .wl-section and enforce
+   readable contrast inside the white .whitelabel-banner.
+========================================================= */
+.whitelabel-banner .whitelabel-pills .wl-pill,
+.whitelabel-banner .wl-pills .wl-pill,
 .whitelabel-banner .wl-pill {
+  color: #0B1930 !important;
   background: #F1F6F8 !important;
-  border: 1px solid #E2E8F0 !important;
+  border: 1px solid #DCE5EF !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  text-shadow: none !important;
 }
 
-.whitelabel-banner svg {
-  color: #008F8C;
-  flex-shrink: 0;
+.whitelabel-banner .whitelabel-pills .wl-pill svg,
+.whitelabel-banner .wl-pills .wl-pill svg,
+.whitelabel-banner .wl-pill svg {
+  color: #008F8C !important;
+  stroke: currentColor;
+  opacity: 1 !important;
+  flex: 0 0 auto;
 }
 
-/* White Label dark showcase: preserve contrast if used */
-.wl-section .wl-head h2,
-.wl-section .wl-feature h3 {
-  color: #FFFFFF !important;
-}
-
-.wl-section .wl-head p,
-.wl-section .wl-lead,
-.wl-section .wl-feature p {
-  color: #D3DCE8 !important;
-}
-
-.wl-section .wl-pills .wl-pill {
-  color: #FFFFFF !important;
-}
-
-/* Prevent clipping */
-.whitelabel-banner .wl-pill,
+/* Some versions use trust-badge-pill for these feature labels. */
 .whitelabel-banner .trust-badge-pill,
-.wl-section .wl-pill {
-  line-height: 1.5;
-  visibility: visible;
-  text-shadow: none;
+.whitelabel-banner .trust-badges .trust-badge-pill {
+  color: #0B1930 !important;
+  background: #FFFFFF !important;
+  border-color: #DCE5EF !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
-@media (max-width: 640px) {
-  .whitelabel-banner {
-    padding: 28px 20px;
-  }
-
-  .whitelabel-banner .whitelabel-pills,
-  .whitelabel-banner .wl-pills {
-    gap: 12px;
-  }
+.whitelabel-banner .trust-badge-pill svg {
+  color: #008F8C !important;
+  opacity: 1 !important;
 }
+
+/* Keep the intended pale-on-navy appearance only on the dark panel. */
+.wl-section .wl-pills .wl-pill {
+  color: #EAF6F5 !important;
+  background: rgba(255,255,255,0.07) !important;
+  border-color: rgba(255,255,255,0.14) !important;
+}
+
+
+
+
 
