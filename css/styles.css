@@ -5957,3 +5957,54 @@ textarea {
   overflow: visible;
 }
 
+/* FIX: White Label showcase text contrast */
+.wl-section .wl-head h2,
+.wl-section .wl-feature h3 {
+  color: #0B1930 !important;
+}
+
+.wl-section .wl-head p,
+.wl-section .wl-lead,
+.wl-section .wl-feature p {
+  color: #64748B !important;
+  opacity: 1 !important;
+}
+
+.wl-section .wl-features {
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.wl-section .wl-feature {
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.wl-section .wl-feature-icon {
+  flex-shrink: 0;
+}
+
+.wl-section .wl-pills .wl-pill {
+  color: #334155 !important;
+  background: #F1F6F8;
+  border-color: #E2E8F0;
+  opacity: 1 !important;
+}
+
+/* Keep feature icons visible */
+.wl-section .wl-feature-icon svg {
+  color: #008F8C;
+}
+
+/* Prevent clipping on smaller screens */
+@media (max-width: 640px) {
+  .wl-section {
+    padding: 30px 20px;
+    border-radius: 18px;
+  }
+
+  .wl-section .wl-pills {
+    gap: 8px;
+  }
+}
+
