@@ -6008,3 +6008,83 @@ textarea {
   }
 }
 
+/* ==================================================
+   ZOOYE WHITE LABEL — VISIBILITY FIX
+   Keep text readable on light and dark panels
+================================================== */
+
+/* Light White Label card */
+.whitelabel-banner,
+.whitelabel-banner * {
+  opacity: 1;
+}
+
+.whitelabel-banner h1,
+.whitelabel-banner h2,
+.whitelabel-banner h3,
+.whitelabel-banner h4,
+.whitelabel-banner h5,
+.whitelabel-banner .wl-pill,
+.whitelabel-banner .trust-badge-pill {
+  color: #0B1930 !important;
+}
+
+.whitelabel-banner p,
+.whitelabel-banner .wl-lead {
+  color: #64748B !important;
+}
+
+/* Feature labels and icons on the light card */
+.whitelabel-banner .whitelabel-pills,
+.whitelabel-banner .wl-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+}
+
+.whitelabel-banner .wl-pill {
+  background: #F1F6F8 !important;
+  border: 1px solid #E2E8F0 !important;
+}
+
+.whitelabel-banner svg {
+  color: #008F8C;
+  flex-shrink: 0;
+}
+
+/* White Label dark showcase: preserve contrast if used */
+.wl-section .wl-head h2,
+.wl-section .wl-feature h3 {
+  color: #FFFFFF !important;
+}
+
+.wl-section .wl-head p,
+.wl-section .wl-lead,
+.wl-section .wl-feature p {
+  color: #D3DCE8 !important;
+}
+
+.wl-section .wl-pills .wl-pill {
+  color: #FFFFFF !important;
+}
+
+/* Prevent clipping */
+.whitelabel-banner .wl-pill,
+.whitelabel-banner .trust-badge-pill,
+.wl-section .wl-pill {
+  line-height: 1.5;
+  visibility: visible;
+  text-shadow: none;
+}
+
+@media (max-width: 640px) {
+  .whitelabel-banner {
+    padding: 28px 20px;
+  }
+
+  .whitelabel-banner .whitelabel-pills,
+  .whitelabel-banner .wl-pills {
+    gap: 12px;
+  }
+}
+
