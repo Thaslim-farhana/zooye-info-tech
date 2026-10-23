@@ -5918,3 +5918,42 @@ textarea {
     max-height: 55px;
   }
 }
+
+/* White Label section: fix feature visibility */
+.white-label-section .feature-list,
+.white-label-section .feature-item,
+.white-label-section .feature-item span {
+  color: #334155;
+  opacity: 1;
+}
+
+.white-label-section .feature-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 24px;
+  margin: 28px 0 32px;
+}
+
+.white-label-section .feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  line-height: 1.5;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.white-label-section .feature-item svg,
+.white-label-section .feature-item i {
+  flex-shrink: 0;
+  color: #009e98;
+}
+
+/* Prevent text and icons from being clipped */
+.white-label-section .feature-list,
+.white-label-section .feature-item {
+  height: auto;
+  overflow: visible;
+}
+
